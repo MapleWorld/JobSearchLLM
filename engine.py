@@ -2,13 +2,13 @@
 engine.py — 检索排序主引擎。
 
 关键设计：**分级 pipeline（--level 0..3）**。
-每一级都是可独立提交的完整系统,级别越高越准但越慢。
-75 分钟里你永远有一个能交的版本,不会出现"设计很美但跑不出结果"。
+每一级都是可独立提交的完整系统，级别越高越准但越慢。
+75 分钟里你永远有一个能交的版本，不会出现"设计很美但跑不出结果"。
 
-  L0  BM25 baseline            无 LLM,~30s 出结果,用来攒第一个分数和 gold set
-  L1  + LLM 编译 + 硬过滤       结构化 criteria,graded relaxation
+  L0  BM25 baseline            无 LLM，~30s 出结果，用来攒第一个分数和 gold set
+  L1  + LLM 编译 + 硬过滤       结构化 criteria，graded relaxation
   L2  + Dense 检索 + RRF 融合   真正的 hybrid
-  L3  + LLM 逐条 criteria 判定  最终排序：先按硬条件命中数,再按软性 fit
+  L3  + LLM 逐条 criteria 判定  最终排序：先按硬条件命中数，再按软性 fit
 """
 
 from __future__ import annotations
@@ -48,7 +48,7 @@ class JobDescription:
 class Candidate:
     candidate_id: str
     name: str = ""
-    raw: Dict[str, Any] = field(default_factory=dict)   # 原始记录,别丢
+    raw: Dict[str, Any] = field(default_factory=dict)   # 原始记录，别丢
     profile_text: str = ""                              # 用于 BM25 / embedding 的拼接文本
     years_experience: Optional[float] = None
     skills: List[str] = field(default_factory=list)
@@ -101,7 +101,7 @@ class SearchConfig:
     prompt_version: str = "v1"
     llm_model: str = "claude-sonnet-4-6"
     embed_model: str = "text-embedding-3-small"
-    hard_criteria_weight: float = 1000.0  # 字典序：先比硬条件数,再比 soft
+    hard_criteria_weight: float = 1000.0  # 字典序：先比硬条件数，再比 soft
     use_cache: bool = True
 
     def signature(self) -> Dict:
@@ -148,7 +148,7 @@ def parse_json_loose(raw: str) -> Any:
 
 class LLMClient:
     """
-    包一层,把 cache / retry / 并发限流 / 用量统计都收在这里。
+    包一层，把 cache / retry / 并发限流 / 用量统计都收在这里。
     换 provider 只需要改 _raw_chat 和 _raw_embed 两个方法。
     """
 
@@ -231,7 +231,7 @@ class LLMClient:
 
 
 # ======================================================================
-# BM25（纯 python,零依赖,L0 baseline 用）
+# BM25（纯 python，零依赖，L0 baseline 用）
 # ======================================================================
 
 _TOKEN = re.compile(r"[a-z0-9\+\#\.]+")
@@ -273,7 +273,7 @@ class BM25:
 
 
 def rrf_fuse(rankings: Sequence[List[str]], k: int = 60) -> List[Tuple[str, float]]:
-    """Reciprocal Rank Fusion —— 融合不同量纲的检索通道,比加权求和稳。"""
+    """Reciprocal Rank Fusion —— 融合不同量纲的检索通道，比加权求和稳。"""
     scores: Dict[str, float] = {}
     for ranking in rankings:
         for rank, cid in enumerate(ranking):
@@ -402,16 +402,36 @@ class CandidateSearchEngine:
         return crit
 
     # ---------- Phase 2a: 分级放松的硬过滤 ----------
+    _SKILL_RE_CACHE: Dict[str, Any] = {}
+
+    @staticmethod
+    def _skill_pattern(variant: str):
+        """
+        词边界匹配，取代裸 `in`。
+        裸子串会让 "go" 命中 "google"、"r" 命中 "react"、"c" 命中 "recruiter"，
+        JD 里出现 Go / R / C / C++ 时硬过滤会**静默失效**。
+        \\b 对 c++ / c# 这类以符号结尾的技能名不适用，所以右边界用
+        「非字母数字或行尾」来判定。
+        """
+        pat = CandidateSearchEngine._SKILL_RE_CACHE.get(variant)
+        if pat is None:
+            pat = re.compile(
+                r"(?<![a-z0-9+#.])" + re.escape(variant) + r"(?![a-z0-9+#])",
+                re.IGNORECASE,
+            )
+            CandidateSearchEngine._SKILL_RE_CACHE[variant] = pat
+        return pat
+
     def _skill_hit(self, cand: Candidate, skill: str, crit: Criteria) -> bool:
         variants = {skill, *crit.skill_synonyms.get(skill, [])}
         blob = (" ".join(cand.skills) + " " + cand.profile_text).lower()
-        return any(v and v in blob for v in variants)
+        return any(v and self._skill_pattern(v).search(blob) for v in variants)
 
     def hard_filter(
         self, cands: List[Candidate], crit: Criteria, trace: SearchTrace
     ) -> List[Candidate]:
         """
-        分级放松：从最严开始往下退,直到池子够大。
+        分级放松：从最严开始往下退，直到池子够大。
         不要一步退到"完全不过滤" —— 那等于放弃了硬条件信号。
         """
         if self.config.level == 0 or not (crit.required_skills or crit.min_years_experience):
@@ -445,7 +465,7 @@ class CandidateSearchEngine:
                 trace.meta["relaxation_level"] = name
                 return kept
         trace.meta["relaxation_level"] = "L4_semantic_only"
-        trace.warn("hard filter 无法产出足够候选人,退化为纯语义检索")
+        trace.warn("hard filter 无法产出足够候选人，退化为纯语义检索")
         return cands
 
     # ---------- Phase 2b: 混合检索 ----------
@@ -457,7 +477,13 @@ class CandidateSearchEngine:
 
         # 通道 1: BM25（永远开着 —— 专有名词、公司名、证书靠它）
         t0 = time.perf_counter()
-        bm = BM25([c.profile_text for c in pool])
+        # 语料不变就复用索引。原来每题重建：10k 候选人 × 20 题 = 41s 纯浪费，
+        # 50k 规模是 215s。key 用候选人 id 序列的 hash。
+        ck = hash(tuple(c.candidate_id for c in pool))
+        bm = self._bm25_cache.get(ck)
+        if bm is None:
+            bm = BM25([c.profile_text for c in pool])
+            self._bm25_cache = {ck: bm}   # 只留一份，避免多题累积占内存
         s = bm.scores(crit.keyword_query or crit.semantic_query)
         order = np.argsort(-s)
         lex_rank = [pool[i].candidate_id for i in order]
@@ -522,7 +548,7 @@ class CandidateSearchEngine:
         n_crit = len(crit.checkable_criteria or jd.hard_criteria) or 1
 
         if self.config.level < 3:
-            # 不做 LLM 重排,直接用检索分
+            # 不做 LLM 重排，直接用检索分
             return [
                 ScoredCandidate(
                     candidate_id=c.candidate_id,
@@ -542,7 +568,7 @@ class CandidateSearchEngine:
         )
         scored = [s for group in results for s in group]
 
-        # 最终排序：字典序 —— 先比通过的硬条件数,再比软性 fit,最后比检索分
+        # 最终排序：字典序 —— 先比通过的硬条件数，再比软性 fit，最后比检索分
         for s in scored:
             s.hard_total = n_crit
             s.final_score = (
@@ -578,7 +604,7 @@ class CandidateSearchEngine:
             for c in cands:
                 r = by_id.get(c.candidate_id)
                 if r is None:
-                    trace.warn(f"judge 漏返回 {c.candidate_id},用检索分兜底")
+                    trace.warn(f"judge 漏返回 {c.candidate_id}，用检索分兜底")
                     out.append(
                         ScoredCandidate(
                             candidate_id=c.candidate_id,
@@ -603,7 +629,7 @@ class CandidateSearchEngine:
                 )
             return out
         except Exception as e:  # noqa: BLE001
-            # 关键：失败不给 0 分（那会静默丢掉好候选人）,退回检索分
+            # 关键：失败不给 0 分（那会静默丢掉好候选人），退回检索分
             trace.warn(f"judge batch failed ({e}), 退回检索分")
             return [
                 ScoredCandidate(

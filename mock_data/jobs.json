@@ -1,0 +1,22 @@
+[
+  {
+    "job_id": "job_001",
+    "title": "Staff Backend / Search Engineer",
+    "description": "Build distributed search and ranking pipelines at scale.",
+    "hard_criteria": [
+      "At least 5 years of backend engineering experience",
+      "Proficient in Python",
+      "Has built distributed systems"
+    ]
+  },
+  {
+    "job_id": "job_002",
+    "title": "Senior ML Platform Engineer",
+    "description": "Own model serving and the feature store for ranking models.",
+    "hard_criteria": [
+      "At least 5 years of engineering experience",
+      "Production machine learning experience",
+      "Experience with large-scale data infrastructure"
+    ]
+  }
+]

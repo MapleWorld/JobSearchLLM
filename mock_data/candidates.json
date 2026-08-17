@@ -1,0 +1,4673 @@
+[
+  {
+    "candidate_id": "cand_0000",
+    "name": "Candidate 0",
+    "years_experience": 10,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Remote",
+    "profile_text": "Senior engineer building distributed search ranking pipelines and production machine learning services in Python at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 10 years of experience."
+  },
+  {
+    "candidate_id": "cand_0001",
+    "name": "Candidate 1",
+    "years_experience": 12,
+    "skills": [
+      "Python3",
+      "Ray"
+    ],
+    "location": "Remote",
+    "profile_text": "Principal engineer. Designed large-scale service mesh and sharded storage layers serving ranked results, plus model deployment and feature storage for recommendation workloads. Skills: Python3, Ray. 12 years of experience."
+  },
+  {
+    "candidate_id": "cand_0002",
+    "name": "Candidate 2",
+    "years_experience": 8,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "New York, NY",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Java, Spring. 8 years of experience."
+  },
+  {
+    "candidate_id": "cand_0003",
+    "name": "Candidate 3",
+    "years_experience": 5,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 5 years of experience."
+  },
+  {
+    "candidate_id": "cand_0004",
+    "name": "Candidate 4",
+    "years_experience": 3,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: Java, Spring. 3 years of experience."
+  },
+  {
+    "candidate_id": "cand_0005",
+    "name": "Candidate 5",
+    "years_experience": 6,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Remote",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: Java, Spring. 6 years of experience."
+  },
+  {
+    "candidate_id": "cand_0006",
+    "name": "Candidate 6",
+    "years_experience": 13,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 13 years of experience."
+  },
+  {
+    "candidate_id": "cand_0007",
+    "name": "Candidate 7",
+    "years_experience": 0,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "Remote",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: Excel, SQL. 0 years of experience."
+  },
+  {
+    "candidate_id": "cand_0008",
+    "name": "Candidate 8",
+    "years_experience": 10,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "Remote",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: Excel, SQL. 10 years of experience."
+  },
+  {
+    "candidate_id": "cand_0009",
+    "name": "Candidate 9",
+    "years_experience": 14,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 14 years of experience."
+  },
+  {
+    "candidate_id": "cand_0010",
+    "name": "Candidate 10",
+    "years_experience": 6,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Remote",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: Java, Spring. 6 years of experience."
+  },
+  {
+    "candidate_id": "cand_0011",
+    "name": "Candidate 11",
+    "years_experience": 8,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Java, Spring. 8 years of experience."
+  },
+  {
+    "candidate_id": "cand_0012",
+    "name": "Candidate 12",
+    "years_experience": 7,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 7 years of experience."
+  },
+  {
+    "candidate_id": "cand_0013",
+    "name": "Candidate 13",
+    "years_experience": 1,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "New York, NY",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Excel, SQL. 1 years of experience."
+  },
+  {
+    "candidate_id": "cand_0014",
+    "name": "Candidate 14",
+    "years_experience": 10,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: Java, Spring. 10 years of experience."
+  },
+  {
+    "candidate_id": "cand_0015",
+    "name": "Candidate 15",
+    "years_experience": 14,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 14 years of experience."
+  },
+  {
+    "candidate_id": "cand_0016",
+    "name": "Candidate 16",
+    "years_experience": 3,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: PHP, Laravel. 3 years of experience."
+  },
+  {
+    "candidate_id": "cand_0017",
+    "name": "Candidate 17",
+    "years_experience": 11,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Remote",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: Java, Spring. 11 years of experience."
+  },
+  {
+    "candidate_id": "cand_0018",
+    "name": "Candidate 18",
+    "years_experience": 14,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Remote",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 14 years of experience."
+  },
+  {
+    "candidate_id": "cand_0019",
+    "name": "Candidate 19",
+    "years_experience": 7,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: Excel, SQL. 7 years of experience."
+  },
+  {
+    "candidate_id": "cand_0020",
+    "name": "Candidate 20",
+    "years_experience": 12,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "New York, NY",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: PHP, Laravel. 12 years of experience."
+  },
+  {
+    "candidate_id": "cand_0021",
+    "name": "Candidate 21",
+    "years_experience": 12,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 12 years of experience."
+  },
+  {
+    "candidate_id": "cand_0022",
+    "name": "Candidate 22",
+    "years_experience": 4,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: Java, Spring. 4 years of experience."
+  },
+  {
+    "candidate_id": "cand_0023",
+    "name": "Candidate 23",
+    "years_experience": 12,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: Java, Spring. 12 years of experience."
+  },
+  {
+    "candidate_id": "cand_0024",
+    "name": "Candidate 24",
+    "years_experience": 9,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 9 years of experience."
+  },
+  {
+    "candidate_id": "cand_0025",
+    "name": "Candidate 25",
+    "years_experience": 7,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: PHP, Laravel. 7 years of experience."
+  },
+  {
+    "candidate_id": "cand_0026",
+    "name": "Candidate 26",
+    "years_experience": 4,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "Remote",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: Excel, SQL. 4 years of experience."
+  },
+  {
+    "candidate_id": "cand_0027",
+    "name": "Candidate 27",
+    "years_experience": 13,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 13 years of experience."
+  },
+  {
+    "candidate_id": "cand_0028",
+    "name": "Candidate 28",
+    "years_experience": 2,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: PHP, Laravel. 2 years of experience."
+  },
+  {
+    "candidate_id": "cand_0029",
+    "name": "Candidate 29",
+    "years_experience": 6,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Remote",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: Java, Spring. 6 years of experience."
+  },
+  {
+    "candidate_id": "cand_0030",
+    "name": "Candidate 30",
+    "years_experience": 13,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 13 years of experience."
+  },
+  {
+    "candidate_id": "cand_0031",
+    "name": "Candidate 31",
+    "years_experience": 12,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "New York, NY",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: PHP, Laravel. 12 years of experience."
+  },
+  {
+    "candidate_id": "cand_0032",
+    "name": "Candidate 32",
+    "years_experience": 5,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "New York, NY",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Excel, SQL. 5 years of experience."
+  },
+  {
+    "candidate_id": "cand_0033",
+    "name": "Candidate 33",
+    "years_experience": 12,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Remote",
+    "profile_text": "Senior engineer building distributed search ranking pipelines and production machine learning services in Python at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 12 years of experience."
+  },
+  {
+    "candidate_id": "cand_0034",
+    "name": "Candidate 34",
+    "years_experience": 7,
+    "skills": [
+      "CPython",
+      "FastAPI"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Principal engineer. Designed horizontally scaled multi-region infrastructure serving ranked results, plus model deployment and feature storage for recommendation workloads. Skills: CPython, FastAPI. 7 years of experience."
+  },
+  {
+    "candidate_id": "cand_0035",
+    "name": "Candidate 35",
+    "years_experience": 10,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: Java, Spring. 10 years of experience."
+  },
+  {
+    "candidate_id": "cand_0036",
+    "name": "Candidate 36",
+    "years_experience": 9,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 9 years of experience."
+  },
+  {
+    "candidate_id": "cand_0037",
+    "name": "Candidate 37",
+    "years_experience": 9,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Excel, SQL. 9 years of experience."
+  },
+  {
+    "candidate_id": "cand_0038",
+    "name": "Candidate 38",
+    "years_experience": 11,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: PHP, Laravel. 11 years of experience."
+  },
+  {
+    "candidate_id": "cand_0039",
+    "name": "Candidate 39",
+    "years_experience": 5,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 5 years of experience."
+  },
+  {
+    "candidate_id": "cand_0040",
+    "name": "Candidate 40",
+    "years_experience": 5,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Remote",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: Java, Spring. 5 years of experience."
+  },
+  {
+    "candidate_id": "cand_0041",
+    "name": "Candidate 41",
+    "years_experience": 7,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: Java, Spring. 7 years of experience."
+  },
+  {
+    "candidate_id": "cand_0042",
+    "name": "Candidate 42",
+    "years_experience": 7,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 7 years of experience."
+  },
+  {
+    "candidate_id": "cand_0043",
+    "name": "Candidate 43",
+    "years_experience": 3,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: PHP, Laravel. 3 years of experience."
+  },
+  {
+    "candidate_id": "cand_0044",
+    "name": "Candidate 44",
+    "years_experience": 1,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Java, Spring. 1 years of experience."
+  },
+  {
+    "candidate_id": "cand_0045",
+    "name": "Candidate 45",
+    "years_experience": 13,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 13 years of experience."
+  },
+  {
+    "candidate_id": "cand_0046",
+    "name": "Candidate 46",
+    "years_experience": 2,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: PHP, Laravel. 2 years of experience."
+  },
+  {
+    "candidate_id": "cand_0047",
+    "name": "Candidate 47",
+    "years_experience": 11,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "New York, NY",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: PHP, Laravel. 11 years of experience."
+  },
+  {
+    "candidate_id": "cand_0048",
+    "name": "Candidate 48",
+    "years_experience": 11,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Remote",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 11 years of experience."
+  },
+  {
+    "candidate_id": "cand_0049",
+    "name": "Candidate 49",
+    "years_experience": 2,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Remote",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: Java, Spring. 2 years of experience."
+  },
+  {
+    "candidate_id": "cand_0050",
+    "name": "Candidate 50",
+    "years_experience": 3,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "Remote",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: Excel, SQL. 3 years of experience."
+  },
+  {
+    "candidate_id": "cand_0051",
+    "name": "Candidate 51",
+    "years_experience": 12,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 12 years of experience."
+  },
+  {
+    "candidate_id": "cand_0052",
+    "name": "Candidate 52",
+    "years_experience": 2,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "Remote",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: PHP, Laravel. 2 years of experience."
+  },
+  {
+    "candidate_id": "cand_0053",
+    "name": "Candidate 53",
+    "years_experience": 2,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: PHP, Laravel. 2 years of experience."
+  },
+  {
+    "candidate_id": "cand_0054",
+    "name": "Candidate 54",
+    "years_experience": 14,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 14 years of experience."
+  },
+  {
+    "candidate_id": "cand_0055",
+    "name": "Candidate 55",
+    "years_experience": 5,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: Java, Spring. 5 years of experience."
+  },
+  {
+    "candidate_id": "cand_0056",
+    "name": "Candidate 56",
+    "years_experience": 9,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: Excel, SQL. 9 years of experience."
+  },
+  {
+    "candidate_id": "cand_0057",
+    "name": "Candidate 57",
+    "years_experience": 5,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 5 years of experience."
+  },
+  {
+    "candidate_id": "cand_0058",
+    "name": "Candidate 58",
+    "years_experience": 12,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: Excel, SQL. 12 years of experience."
+  },
+  {
+    "candidate_id": "cand_0059",
+    "name": "Candidate 59",
+    "years_experience": 6,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "Remote",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: PHP, Laravel. 6 years of experience."
+  },
+  {
+    "candidate_id": "cand_0060",
+    "name": "Candidate 60",
+    "years_experience": 12,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 12 years of experience."
+  },
+  {
+    "candidate_id": "cand_0061",
+    "name": "Candidate 61",
+    "years_experience": 6,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Remote",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: Java, Spring. 6 years of experience."
+  },
+  {
+    "candidate_id": "cand_0062",
+    "name": "Candidate 62",
+    "years_experience": 3,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "Remote",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: PHP, Laravel. 3 years of experience."
+  },
+  {
+    "candidate_id": "cand_0063",
+    "name": "Candidate 63",
+    "years_experience": 10,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 10 years of experience."
+  },
+  {
+    "candidate_id": "cand_0064",
+    "name": "Candidate 64",
+    "years_experience": 0,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: Java, Spring. 0 years of experience."
+  },
+  {
+    "candidate_id": "cand_0065",
+    "name": "Candidate 65",
+    "years_experience": 2,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: Excel, SQL. 2 years of experience."
+  },
+  {
+    "candidate_id": "cand_0066",
+    "name": "Candidate 66",
+    "years_experience": 14,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Remote",
+    "profile_text": "Senior engineer building distributed search ranking pipelines and production machine learning services in Python at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 14 years of experience."
+  },
+  {
+    "candidate_id": "cand_0067",
+    "name": "Candidate 67",
+    "years_experience": 7,
+    "skills": [
+      "Py3",
+      "Django",
+      "Celery"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Principal engineer. Designed high-throughput streaming pipelines across clusters serving ranked results, plus model deployment and feature storage for recommendation workloads. Skills: Py3, Django, Celery. 7 years of experience."
+  },
+  {
+    "candidate_id": "cand_0068",
+    "name": "Candidate 68",
+    "years_experience": 2,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Excel, SQL. 2 years of experience."
+  },
+  {
+    "candidate_id": "cand_0069",
+    "name": "Candidate 69",
+    "years_experience": 14,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 14 years of experience."
+  },
+  {
+    "candidate_id": "cand_0070",
+    "name": "Candidate 70",
+    "years_experience": 7,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: Java, Spring. 7 years of experience."
+  },
+  {
+    "candidate_id": "cand_0071",
+    "name": "Candidate 71",
+    "years_experience": 7,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: PHP, Laravel. 7 years of experience."
+  },
+  {
+    "candidate_id": "cand_0072",
+    "name": "Candidate 72",
+    "years_experience": 6,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Remote",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 6 years of experience."
+  },
+  {
+    "candidate_id": "cand_0073",
+    "name": "Candidate 73",
+    "years_experience": 1,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "New York, NY",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Excel, SQL. 1 years of experience."
+  },
+  {
+    "candidate_id": "cand_0074",
+    "name": "Candidate 74",
+    "years_experience": 4,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "Remote",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: PHP, Laravel. 4 years of experience."
+  },
+  {
+    "candidate_id": "cand_0075",
+    "name": "Candidate 75",
+    "years_experience": 13,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Remote",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 13 years of experience."
+  },
+  {
+    "candidate_id": "cand_0076",
+    "name": "Candidate 76",
+    "years_experience": 3,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "Remote",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Excel, SQL. 3 years of experience."
+  },
+  {
+    "candidate_id": "cand_0077",
+    "name": "Candidate 77",
+    "years_experience": 11,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: Excel, SQL. 11 years of experience."
+  },
+  {
+    "candidate_id": "cand_0078",
+    "name": "Candidate 78",
+    "years_experience": 9,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 9 years of experience."
+  },
+  {
+    "candidate_id": "cand_0079",
+    "name": "Candidate 79",
+    "years_experience": 1,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "New York, NY",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Excel, SQL. 1 years of experience."
+  },
+  {
+    "candidate_id": "cand_0080",
+    "name": "Candidate 80",
+    "years_experience": 5,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Remote",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Java, Spring. 5 years of experience."
+  },
+  {
+    "candidate_id": "cand_0081",
+    "name": "Candidate 81",
+    "years_experience": 13,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 13 years of experience."
+  },
+  {
+    "candidate_id": "cand_0082",
+    "name": "Candidate 82",
+    "years_experience": 12,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "New York, NY",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Excel, SQL. 12 years of experience."
+  },
+  {
+    "candidate_id": "cand_0083",
+    "name": "Candidate 83",
+    "years_experience": 3,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "Remote",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: Excel, SQL. 3 years of experience."
+  },
+  {
+    "candidate_id": "cand_0084",
+    "name": "Candidate 84",
+    "years_experience": 11,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 11 years of experience."
+  },
+  {
+    "candidate_id": "cand_0085",
+    "name": "Candidate 85",
+    "years_experience": 12,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: Java, Spring. 12 years of experience."
+  },
+  {
+    "candidate_id": "cand_0086",
+    "name": "Candidate 86",
+    "years_experience": 7,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "Remote",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: PHP, Laravel. 7 years of experience."
+  },
+  {
+    "candidate_id": "cand_0087",
+    "name": "Candidate 87",
+    "years_experience": 5,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 5 years of experience."
+  },
+  {
+    "candidate_id": "cand_0088",
+    "name": "Candidate 88",
+    "years_experience": 7,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: PHP, Laravel. 7 years of experience."
+  },
+  {
+    "candidate_id": "cand_0089",
+    "name": "Candidate 89",
+    "years_experience": 9,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "New York, NY",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: PHP, Laravel. 9 years of experience."
+  },
+  {
+    "candidate_id": "cand_0090",
+    "name": "Candidate 90",
+    "years_experience": 10,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 10 years of experience."
+  },
+  {
+    "candidate_id": "cand_0091",
+    "name": "Candidate 91",
+    "years_experience": 1,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Remote",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: Java, Spring. 1 years of experience."
+  },
+  {
+    "candidate_id": "cand_0092",
+    "name": "Candidate 92",
+    "years_experience": 7,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Remote",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Java, Spring. 7 years of experience."
+  },
+  {
+    "candidate_id": "cand_0093",
+    "name": "Candidate 93",
+    "years_experience": 12,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 12 years of experience."
+  },
+  {
+    "candidate_id": "cand_0094",
+    "name": "Candidate 94",
+    "years_experience": 9,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "New York, NY",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Java, Spring. 9 years of experience."
+  },
+  {
+    "candidate_id": "cand_0095",
+    "name": "Candidate 95",
+    "years_experience": 5,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: Excel, SQL. 5 years of experience."
+  },
+  {
+    "candidate_id": "cand_0096",
+    "name": "Candidate 96",
+    "years_experience": 6,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 6 years of experience."
+  },
+  {
+    "candidate_id": "cand_0097",
+    "name": "Candidate 97",
+    "years_experience": 12,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: Excel, SQL. 12 years of experience."
+  },
+  {
+    "candidate_id": "cand_0098",
+    "name": "Candidate 98",
+    "years_experience": 2,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: PHP, Laravel. 2 years of experience."
+  },
+  {
+    "candidate_id": "cand_0099",
+    "name": "Candidate 99",
+    "years_experience": 6,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Senior engineer building distributed search ranking pipelines and production machine learning services in Python at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 6 years of experience."
+  },
+  {
+    "candidate_id": "cand_0100",
+    "name": "Candidate 100",
+    "years_experience": 12,
+    "skills": [
+      "CPython",
+      "FastAPI"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Principal engineer. Designed horizontally scaled multi-region infrastructure serving ranked results, plus model deployment and feature storage for recommendation workloads. Skills: CPython, FastAPI. 12 years of experience."
+  },
+  {
+    "candidate_id": "cand_0101",
+    "name": "Candidate 101",
+    "years_experience": 1,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "Remote",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: Excel, SQL. 1 years of experience."
+  },
+  {
+    "candidate_id": "cand_0102",
+    "name": "Candidate 102",
+    "years_experience": 7,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Remote",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 7 years of experience."
+  },
+  {
+    "candidate_id": "cand_0103",
+    "name": "Candidate 103",
+    "years_experience": 2,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "New York, NY",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Excel, SQL. 2 years of experience."
+  },
+  {
+    "candidate_id": "cand_0104",
+    "name": "Candidate 104",
+    "years_experience": 2,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: Excel, SQL. 2 years of experience."
+  },
+  {
+    "candidate_id": "cand_0105",
+    "name": "Candidate 105",
+    "years_experience": 10,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Remote",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 10 years of experience."
+  },
+  {
+    "candidate_id": "cand_0106",
+    "name": "Candidate 106",
+    "years_experience": 8,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "Remote",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: Excel, SQL. 8 years of experience."
+  },
+  {
+    "candidate_id": "cand_0107",
+    "name": "Candidate 107",
+    "years_experience": 0,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "Remote",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: Excel, SQL. 0 years of experience."
+  },
+  {
+    "candidate_id": "cand_0108",
+    "name": "Candidate 108",
+    "years_experience": 13,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 13 years of experience."
+  },
+  {
+    "candidate_id": "cand_0109",
+    "name": "Candidate 109",
+    "years_experience": 2,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "Remote",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: PHP, Laravel. 2 years of experience."
+  },
+  {
+    "candidate_id": "cand_0110",
+    "name": "Candidate 110",
+    "years_experience": 0,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: PHP, Laravel. 0 years of experience."
+  },
+  {
+    "candidate_id": "cand_0111",
+    "name": "Candidate 111",
+    "years_experience": 13,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Remote",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 13 years of experience."
+  },
+  {
+    "candidate_id": "cand_0112",
+    "name": "Candidate 112",
+    "years_experience": 12,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Excel, SQL. 12 years of experience."
+  },
+  {
+    "candidate_id": "cand_0113",
+    "name": "Candidate 113",
+    "years_experience": 8,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "Remote",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: PHP, Laravel. 8 years of experience."
+  },
+  {
+    "candidate_id": "cand_0114",
+    "name": "Candidate 114",
+    "years_experience": 10,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 10 years of experience."
+  },
+  {
+    "candidate_id": "cand_0115",
+    "name": "Candidate 115",
+    "years_experience": 10,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: Excel, SQL. 10 years of experience."
+  },
+  {
+    "candidate_id": "cand_0116",
+    "name": "Candidate 116",
+    "years_experience": 8,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Remote",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: Java, Spring. 8 years of experience."
+  },
+  {
+    "candidate_id": "cand_0117",
+    "name": "Candidate 117",
+    "years_experience": 13,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 13 years of experience."
+  },
+  {
+    "candidate_id": "cand_0118",
+    "name": "Candidate 118",
+    "years_experience": 0,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: PHP, Laravel. 0 years of experience."
+  },
+  {
+    "candidate_id": "cand_0119",
+    "name": "Candidate 119",
+    "years_experience": 0,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Remote",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: Java, Spring. 0 years of experience."
+  },
+  {
+    "candidate_id": "cand_0120",
+    "name": "Candidate 120",
+    "years_experience": 12,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 12 years of experience."
+  },
+  {
+    "candidate_id": "cand_0121",
+    "name": "Candidate 121",
+    "years_experience": 11,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Remote",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: Java, Spring. 11 years of experience."
+  },
+  {
+    "candidate_id": "cand_0122",
+    "name": "Candidate 122",
+    "years_experience": 5,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: Excel, SQL. 5 years of experience."
+  },
+  {
+    "candidate_id": "cand_0123",
+    "name": "Candidate 123",
+    "years_experience": 13,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 13 years of experience."
+  },
+  {
+    "candidate_id": "cand_0124",
+    "name": "Candidate 124",
+    "years_experience": 12,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Remote",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: Java, Spring. 12 years of experience."
+  },
+  {
+    "candidate_id": "cand_0125",
+    "name": "Candidate 125",
+    "years_experience": 3,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Remote",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Java, Spring. 3 years of experience."
+  },
+  {
+    "candidate_id": "cand_0126",
+    "name": "Candidate 126",
+    "years_experience": 6,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 6 years of experience."
+  },
+  {
+    "candidate_id": "cand_0127",
+    "name": "Candidate 127",
+    "years_experience": 7,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "Remote",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: Excel, SQL. 7 years of experience."
+  },
+  {
+    "candidate_id": "cand_0128",
+    "name": "Candidate 128",
+    "years_experience": 7,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: PHP, Laravel. 7 years of experience."
+  },
+  {
+    "candidate_id": "cand_0129",
+    "name": "Candidate 129",
+    "years_experience": 14,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 14 years of experience."
+  },
+  {
+    "candidate_id": "cand_0130",
+    "name": "Candidate 130",
+    "years_experience": 3,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Excel, SQL. 3 years of experience."
+  },
+  {
+    "candidate_id": "cand_0131",
+    "name": "Candidate 131",
+    "years_experience": 8,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "New York, NY",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Excel, SQL. 8 years of experience."
+  },
+  {
+    "candidate_id": "cand_0132",
+    "name": "Candidate 132",
+    "years_experience": 8,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Senior engineer building distributed search ranking pipelines and production machine learning services in Python at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 8 years of experience."
+  },
+  {
+    "candidate_id": "cand_0133",
+    "name": "Candidate 133",
+    "years_experience": 14,
+    "skills": [
+      "CPython",
+      "FastAPI"
+    ],
+    "location": "Remote",
+    "profile_text": "Principal engineer. Designed high-throughput streaming pipelines across clusters serving ranked results, plus model deployment and feature storage for recommendation workloads. Skills: CPython, FastAPI. 14 years of experience."
+  },
+  {
+    "candidate_id": "cand_0134",
+    "name": "Candidate 134",
+    "years_experience": 7,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Remote",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Java, Spring. 7 years of experience."
+  },
+  {
+    "candidate_id": "cand_0135",
+    "name": "Candidate 135",
+    "years_experience": 11,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 11 years of experience."
+  },
+  {
+    "candidate_id": "cand_0136",
+    "name": "Candidate 136",
+    "years_experience": 5,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Remote",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: Java, Spring. 5 years of experience."
+  },
+  {
+    "candidate_id": "cand_0137",
+    "name": "Candidate 137",
+    "years_experience": 6,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: Java, Spring. 6 years of experience."
+  },
+  {
+    "candidate_id": "cand_0138",
+    "name": "Candidate 138",
+    "years_experience": 9,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Remote",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 9 years of experience."
+  },
+  {
+    "candidate_id": "cand_0139",
+    "name": "Candidate 139",
+    "years_experience": 12,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: Java, Spring. 12 years of experience."
+  },
+  {
+    "candidate_id": "cand_0140",
+    "name": "Candidate 140",
+    "years_experience": 10,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: PHP, Laravel. 10 years of experience."
+  },
+  {
+    "candidate_id": "cand_0141",
+    "name": "Candidate 141",
+    "years_experience": 7,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 7 years of experience."
+  },
+  {
+    "candidate_id": "cand_0142",
+    "name": "Candidate 142",
+    "years_experience": 3,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: Excel, SQL. 3 years of experience."
+  },
+  {
+    "candidate_id": "cand_0143",
+    "name": "Candidate 143",
+    "years_experience": 7,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Remote",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: Java, Spring. 7 years of experience."
+  },
+  {
+    "candidate_id": "cand_0144",
+    "name": "Candidate 144",
+    "years_experience": 7,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 7 years of experience."
+  },
+  {
+    "candidate_id": "cand_0145",
+    "name": "Candidate 145",
+    "years_experience": 6,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Excel, SQL. 6 years of experience."
+  },
+  {
+    "candidate_id": "cand_0146",
+    "name": "Candidate 146",
+    "years_experience": 6,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Java, Spring. 6 years of experience."
+  },
+  {
+    "candidate_id": "cand_0147",
+    "name": "Candidate 147",
+    "years_experience": 6,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 6 years of experience."
+  },
+  {
+    "candidate_id": "cand_0148",
+    "name": "Candidate 148",
+    "years_experience": 5,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "New York, NY",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Java, Spring. 5 years of experience."
+  },
+  {
+    "candidate_id": "cand_0149",
+    "name": "Candidate 149",
+    "years_experience": 7,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "Remote",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: PHP, Laravel. 7 years of experience."
+  },
+  {
+    "candidate_id": "cand_0150",
+    "name": "Candidate 150",
+    "years_experience": 11,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 11 years of experience."
+  },
+  {
+    "candidate_id": "cand_0151",
+    "name": "Candidate 151",
+    "years_experience": 8,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "New York, NY",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Excel, SQL. 8 years of experience."
+  },
+  {
+    "candidate_id": "cand_0152",
+    "name": "Candidate 152",
+    "years_experience": 1,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Remote",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: Java, Spring. 1 years of experience."
+  },
+  {
+    "candidate_id": "cand_0153",
+    "name": "Candidate 153",
+    "years_experience": 6,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 6 years of experience."
+  },
+  {
+    "candidate_id": "cand_0154",
+    "name": "Candidate 154",
+    "years_experience": 4,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: Java, Spring. 4 years of experience."
+  },
+  {
+    "candidate_id": "cand_0155",
+    "name": "Candidate 155",
+    "years_experience": 12,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "New York, NY",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Java, Spring. 12 years of experience."
+  },
+  {
+    "candidate_id": "cand_0156",
+    "name": "Candidate 156",
+    "years_experience": 9,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 9 years of experience."
+  },
+  {
+    "candidate_id": "cand_0157",
+    "name": "Candidate 157",
+    "years_experience": 2,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: Excel, SQL. 2 years of experience."
+  },
+  {
+    "candidate_id": "cand_0158",
+    "name": "Candidate 158",
+    "years_experience": 7,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "Remote",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Excel, SQL. 7 years of experience."
+  },
+  {
+    "candidate_id": "cand_0159",
+    "name": "Candidate 159",
+    "years_experience": 9,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Remote",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 9 years of experience."
+  },
+  {
+    "candidate_id": "cand_0160",
+    "name": "Candidate 160",
+    "years_experience": 12,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: Excel, SQL. 12 years of experience."
+  },
+  {
+    "candidate_id": "cand_0161",
+    "name": "Candidate 161",
+    "years_experience": 1,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: PHP, Laravel. 1 years of experience."
+  },
+  {
+    "candidate_id": "cand_0162",
+    "name": "Candidate 162",
+    "years_experience": 6,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 6 years of experience."
+  },
+  {
+    "candidate_id": "cand_0163",
+    "name": "Candidate 163",
+    "years_experience": 1,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "Remote",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: Excel, SQL. 1 years of experience."
+  },
+  {
+    "candidate_id": "cand_0164",
+    "name": "Candidate 164",
+    "years_experience": 4,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Remote",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Java, Spring. 4 years of experience."
+  },
+  {
+    "candidate_id": "cand_0165",
+    "name": "Candidate 165",
+    "years_experience": 10,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Senior engineer building distributed search ranking pipelines and production machine learning services in Python at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 10 years of experience."
+  },
+  {
+    "candidate_id": "cand_0166",
+    "name": "Candidate 166",
+    "years_experience": 12,
+    "skills": [
+      "CPython",
+      "FastAPI"
+    ],
+    "location": "Remote",
+    "profile_text": "Principal engineer. Designed high-throughput streaming pipelines across clusters serving ranked results, plus model deployment and feature storage for recommendation workloads. Skills: CPython, FastAPI. 12 years of experience."
+  },
+  {
+    "candidate_id": "cand_0167",
+    "name": "Candidate 167",
+    "years_experience": 0,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "Remote",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: Excel, SQL. 0 years of experience."
+  },
+  {
+    "candidate_id": "cand_0168",
+    "name": "Candidate 168",
+    "years_experience": 6,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Remote",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 6 years of experience."
+  },
+  {
+    "candidate_id": "cand_0169",
+    "name": "Candidate 169",
+    "years_experience": 4,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Remote",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: Java, Spring. 4 years of experience."
+  },
+  {
+    "candidate_id": "cand_0170",
+    "name": "Candidate 170",
+    "years_experience": 4,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "New York, NY",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Excel, SQL. 4 years of experience."
+  },
+  {
+    "candidate_id": "cand_0171",
+    "name": "Candidate 171",
+    "years_experience": 8,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 8 years of experience."
+  },
+  {
+    "candidate_id": "cand_0172",
+    "name": "Candidate 172",
+    "years_experience": 7,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "Remote",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: Excel, SQL. 7 years of experience."
+  },
+  {
+    "candidate_id": "cand_0173",
+    "name": "Candidate 173",
+    "years_experience": 4,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: PHP, Laravel. 4 years of experience."
+  },
+  {
+    "candidate_id": "cand_0174",
+    "name": "Candidate 174",
+    "years_experience": 5,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Remote",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 5 years of experience."
+  },
+  {
+    "candidate_id": "cand_0175",
+    "name": "Candidate 175",
+    "years_experience": 0,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: Excel, SQL. 0 years of experience."
+  },
+  {
+    "candidate_id": "cand_0176",
+    "name": "Candidate 176",
+    "years_experience": 3,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "Remote",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Excel, SQL. 3 years of experience."
+  },
+  {
+    "candidate_id": "cand_0177",
+    "name": "Candidate 177",
+    "years_experience": 12,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Remote",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 12 years of experience."
+  },
+  {
+    "candidate_id": "cand_0178",
+    "name": "Candidate 178",
+    "years_experience": 10,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "New York, NY",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Excel, SQL. 10 years of experience."
+  },
+  {
+    "candidate_id": "cand_0179",
+    "name": "Candidate 179",
+    "years_experience": 7,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "New York, NY",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Excel, SQL. 7 years of experience."
+  },
+  {
+    "candidate_id": "cand_0180",
+    "name": "Candidate 180",
+    "years_experience": 9,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 9 years of experience."
+  },
+  {
+    "candidate_id": "cand_0181",
+    "name": "Candidate 181",
+    "years_experience": 3,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Remote",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Java, Spring. 3 years of experience."
+  },
+  {
+    "candidate_id": "cand_0182",
+    "name": "Candidate 182",
+    "years_experience": 11,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "Remote",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: Excel, SQL. 11 years of experience."
+  },
+  {
+    "candidate_id": "cand_0183",
+    "name": "Candidate 183",
+    "years_experience": 11,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 11 years of experience."
+  },
+  {
+    "candidate_id": "cand_0184",
+    "name": "Candidate 184",
+    "years_experience": 0,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Remote",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: Java, Spring. 0 years of experience."
+  },
+  {
+    "candidate_id": "cand_0185",
+    "name": "Candidate 185",
+    "years_experience": 10,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Excel, SQL. 10 years of experience."
+  },
+  {
+    "candidate_id": "cand_0186",
+    "name": "Candidate 186",
+    "years_experience": 7,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Remote",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 7 years of experience."
+  },
+  {
+    "candidate_id": "cand_0187",
+    "name": "Candidate 187",
+    "years_experience": 1,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "New York, NY",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Excel, SQL. 1 years of experience."
+  },
+  {
+    "candidate_id": "cand_0188",
+    "name": "Candidate 188",
+    "years_experience": 10,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "Remote",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: PHP, Laravel. 10 years of experience."
+  },
+  {
+    "candidate_id": "cand_0189",
+    "name": "Candidate 189",
+    "years_experience": 9,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Remote",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 9 years of experience."
+  },
+  {
+    "candidate_id": "cand_0190",
+    "name": "Candidate 190",
+    "years_experience": 7,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: Java, Spring. 7 years of experience."
+  },
+  {
+    "candidate_id": "cand_0191",
+    "name": "Candidate 191",
+    "years_experience": 7,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Java, Spring. 7 years of experience."
+  },
+  {
+    "candidate_id": "cand_0192",
+    "name": "Candidate 192",
+    "years_experience": 10,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 10 years of experience."
+  },
+  {
+    "candidate_id": "cand_0193",
+    "name": "Candidate 193",
+    "years_experience": 5,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: Java, Spring. 5 years of experience."
+  },
+  {
+    "candidate_id": "cand_0194",
+    "name": "Candidate 194",
+    "years_experience": 3,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "Remote",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: PHP, Laravel. 3 years of experience."
+  },
+  {
+    "candidate_id": "cand_0195",
+    "name": "Candidate 195",
+    "years_experience": 10,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 10 years of experience."
+  },
+  {
+    "candidate_id": "cand_0196",
+    "name": "Candidate 196",
+    "years_experience": 1,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "New York, NY",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: PHP, Laravel. 1 years of experience."
+  },
+  {
+    "candidate_id": "cand_0197",
+    "name": "Candidate 197",
+    "years_experience": 10,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: Java, Spring. 10 years of experience."
+  },
+  {
+    "candidate_id": "cand_0198",
+    "name": "Candidate 198",
+    "years_experience": 5,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Remote",
+    "profile_text": "Senior engineer building distributed search ranking pipelines and production machine learning services in Python at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 5 years of experience."
+  },
+  {
+    "candidate_id": "cand_0199",
+    "name": "Candidate 199",
+    "years_experience": 10,
+    "skills": [
+      "Py3",
+      "Django",
+      "Celery"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Principal engineer. Designed large-scale service mesh and sharded storage layers serving ranked results, plus model deployment and feature storage for recommendation workloads. Skills: Py3, Django, Celery. 10 years of experience."
+  },
+  {
+    "candidate_id": "cand_0200",
+    "name": "Candidate 200",
+    "years_experience": 9,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Remote",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Java, Spring. 9 years of experience."
+  },
+  {
+    "candidate_id": "cand_0201",
+    "name": "Candidate 201",
+    "years_experience": 9,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 9 years of experience."
+  },
+  {
+    "candidate_id": "cand_0202",
+    "name": "Candidate 202",
+    "years_experience": 10,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: Java, Spring. 10 years of experience."
+  },
+  {
+    "candidate_id": "cand_0203",
+    "name": "Candidate 203",
+    "years_experience": 8,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: Java, Spring. 8 years of experience."
+  },
+  {
+    "candidate_id": "cand_0204",
+    "name": "Candidate 204",
+    "years_experience": 14,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 14 years of experience."
+  },
+  {
+    "candidate_id": "cand_0205",
+    "name": "Candidate 205",
+    "years_experience": 12,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: PHP, Laravel. 12 years of experience."
+  },
+  {
+    "candidate_id": "cand_0206",
+    "name": "Candidate 206",
+    "years_experience": 2,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: PHP, Laravel. 2 years of experience."
+  },
+  {
+    "candidate_id": "cand_0207",
+    "name": "Candidate 207",
+    "years_experience": 7,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Remote",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 7 years of experience."
+  },
+  {
+    "candidate_id": "cand_0208",
+    "name": "Candidate 208",
+    "years_experience": 11,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: Excel, SQL. 11 years of experience."
+  },
+  {
+    "candidate_id": "cand_0209",
+    "name": "Candidate 209",
+    "years_experience": 11,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "Remote",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: Excel, SQL. 11 years of experience."
+  },
+  {
+    "candidate_id": "cand_0210",
+    "name": "Candidate 210",
+    "years_experience": 13,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 13 years of experience."
+  },
+  {
+    "candidate_id": "cand_0211",
+    "name": "Candidate 211",
+    "years_experience": 9,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: Java, Spring. 9 years of experience."
+  },
+  {
+    "candidate_id": "cand_0212",
+    "name": "Candidate 212",
+    "years_experience": 12,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: Excel, SQL. 12 years of experience."
+  },
+  {
+    "candidate_id": "cand_0213",
+    "name": "Candidate 213",
+    "years_experience": 8,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Remote",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 8 years of experience."
+  },
+  {
+    "candidate_id": "cand_0214",
+    "name": "Candidate 214",
+    "years_experience": 0,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: Java, Spring. 0 years of experience."
+  },
+  {
+    "candidate_id": "cand_0215",
+    "name": "Candidate 215",
+    "years_experience": 5,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Java, Spring. 5 years of experience."
+  },
+  {
+    "candidate_id": "cand_0216",
+    "name": "Candidate 216",
+    "years_experience": 13,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Remote",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 13 years of experience."
+  },
+  {
+    "candidate_id": "cand_0217",
+    "name": "Candidate 217",
+    "years_experience": 10,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: Java, Spring. 10 years of experience."
+  },
+  {
+    "candidate_id": "cand_0218",
+    "name": "Candidate 218",
+    "years_experience": 10,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Java, Spring. 10 years of experience."
+  },
+  {
+    "candidate_id": "cand_0219",
+    "name": "Candidate 219",
+    "years_experience": 5,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 5 years of experience."
+  },
+  {
+    "candidate_id": "cand_0220",
+    "name": "Candidate 220",
+    "years_experience": 12,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: Java, Spring. 12 years of experience."
+  },
+  {
+    "candidate_id": "cand_0221",
+    "name": "Candidate 221",
+    "years_experience": 8,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: Java, Spring. 8 years of experience."
+  },
+  {
+    "candidate_id": "cand_0222",
+    "name": "Candidate 222",
+    "years_experience": 6,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 6 years of experience."
+  },
+  {
+    "candidate_id": "cand_0223",
+    "name": "Candidate 223",
+    "years_experience": 11,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "Remote",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: PHP, Laravel. 11 years of experience."
+  },
+  {
+    "candidate_id": "cand_0224",
+    "name": "Candidate 224",
+    "years_experience": 4,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Remote",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: Java, Spring. 4 years of experience."
+  },
+  {
+    "candidate_id": "cand_0225",
+    "name": "Candidate 225",
+    "years_experience": 8,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 8 years of experience."
+  },
+  {
+    "candidate_id": "cand_0226",
+    "name": "Candidate 226",
+    "years_experience": 10,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: PHP, Laravel. 10 years of experience."
+  },
+  {
+    "candidate_id": "cand_0227",
+    "name": "Candidate 227",
+    "years_experience": 1,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: PHP, Laravel. 1 years of experience."
+  },
+  {
+    "candidate_id": "cand_0228",
+    "name": "Candidate 228",
+    "years_experience": 5,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 5 years of experience."
+  },
+  {
+    "candidate_id": "cand_0229",
+    "name": "Candidate 229",
+    "years_experience": 10,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "Remote",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: Excel, SQL. 10 years of experience."
+  },
+  {
+    "candidate_id": "cand_0230",
+    "name": "Candidate 230",
+    "years_experience": 9,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Java, Spring. 9 years of experience."
+  },
+  {
+    "candidate_id": "cand_0231",
+    "name": "Candidate 231",
+    "years_experience": 15,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Senior engineer building distributed search ranking pipelines and production machine learning services in Python at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 15 years of experience."
+  },
+  {
+    "candidate_id": "cand_0232",
+    "name": "Candidate 232",
+    "years_experience": 10,
+    "skills": [
+      "Python3",
+      "Ray"
+    ],
+    "location": "Remote",
+    "profile_text": "Principal engineer. Designed high-throughput streaming pipelines across clusters serving ranked results, plus model deployment and feature storage for recommendation workloads. Skills: Python3, Ray. 10 years of experience."
+  },
+  {
+    "candidate_id": "cand_0233",
+    "name": "Candidate 233",
+    "years_experience": 0,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: PHP, Laravel. 0 years of experience."
+  },
+  {
+    "candidate_id": "cand_0234",
+    "name": "Candidate 234",
+    "years_experience": 9,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 9 years of experience."
+  },
+  {
+    "candidate_id": "cand_0235",
+    "name": "Candidate 235",
+    "years_experience": 1,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: Excel, SQL. 1 years of experience."
+  },
+  {
+    "candidate_id": "cand_0236",
+    "name": "Candidate 236",
+    "years_experience": 7,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: PHP, Laravel. 7 years of experience."
+  },
+  {
+    "candidate_id": "cand_0237",
+    "name": "Candidate 237",
+    "years_experience": 9,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 9 years of experience."
+  },
+  {
+    "candidate_id": "cand_0238",
+    "name": "Candidate 238",
+    "years_experience": 7,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: PHP, Laravel. 7 years of experience."
+  },
+  {
+    "candidate_id": "cand_0239",
+    "name": "Candidate 239",
+    "years_experience": 3,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: PHP, Laravel. 3 years of experience."
+  },
+  {
+    "candidate_id": "cand_0240",
+    "name": "Candidate 240",
+    "years_experience": 5,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 5 years of experience."
+  },
+  {
+    "candidate_id": "cand_0241",
+    "name": "Candidate 241",
+    "years_experience": 7,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: Java, Spring. 7 years of experience."
+  },
+  {
+    "candidate_id": "cand_0242",
+    "name": "Candidate 242",
+    "years_experience": 4,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "Remote",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: PHP, Laravel. 4 years of experience."
+  },
+  {
+    "candidate_id": "cand_0243",
+    "name": "Candidate 243",
+    "years_experience": 6,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 6 years of experience."
+  },
+  {
+    "candidate_id": "cand_0244",
+    "name": "Candidate 244",
+    "years_experience": 1,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: Java, Spring. 1 years of experience."
+  },
+  {
+    "candidate_id": "cand_0245",
+    "name": "Candidate 245",
+    "years_experience": 4,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: PHP, Laravel. 4 years of experience."
+  },
+  {
+    "candidate_id": "cand_0246",
+    "name": "Candidate 246",
+    "years_experience": 13,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 13 years of experience."
+  },
+  {
+    "candidate_id": "cand_0247",
+    "name": "Candidate 247",
+    "years_experience": 1,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "Remote",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Excel, SQL. 1 years of experience."
+  },
+  {
+    "candidate_id": "cand_0248",
+    "name": "Candidate 248",
+    "years_experience": 7,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "Remote",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: PHP, Laravel. 7 years of experience."
+  },
+  {
+    "candidate_id": "cand_0249",
+    "name": "Candidate 249",
+    "years_experience": 7,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Remote",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 7 years of experience."
+  },
+  {
+    "candidate_id": "cand_0250",
+    "name": "Candidate 250",
+    "years_experience": 7,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Excel, SQL. 7 years of experience."
+  },
+  {
+    "candidate_id": "cand_0251",
+    "name": "Candidate 251",
+    "years_experience": 4,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: Excel, SQL. 4 years of experience."
+  },
+  {
+    "candidate_id": "cand_0252",
+    "name": "Candidate 252",
+    "years_experience": 10,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 10 years of experience."
+  },
+  {
+    "candidate_id": "cand_0253",
+    "name": "Candidate 253",
+    "years_experience": 5,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Remote",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Java, Spring. 5 years of experience."
+  },
+  {
+    "candidate_id": "cand_0254",
+    "name": "Candidate 254",
+    "years_experience": 5,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "Remote",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: PHP, Laravel. 5 years of experience."
+  },
+  {
+    "candidate_id": "cand_0255",
+    "name": "Candidate 255",
+    "years_experience": 8,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 8 years of experience."
+  },
+  {
+    "candidate_id": "cand_0256",
+    "name": "Candidate 256",
+    "years_experience": 0,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Excel, SQL. 0 years of experience."
+  },
+  {
+    "candidate_id": "cand_0257",
+    "name": "Candidate 257",
+    "years_experience": 5,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Java, Spring. 5 years of experience."
+  },
+  {
+    "candidate_id": "cand_0258",
+    "name": "Candidate 258",
+    "years_experience": 14,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Remote",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 14 years of experience."
+  },
+  {
+    "candidate_id": "cand_0259",
+    "name": "Candidate 259",
+    "years_experience": 5,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "Remote",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: PHP, Laravel. 5 years of experience."
+  },
+  {
+    "candidate_id": "cand_0260",
+    "name": "Candidate 260",
+    "years_experience": 4,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: Java, Spring. 4 years of experience."
+  },
+  {
+    "candidate_id": "cand_0261",
+    "name": "Candidate 261",
+    "years_experience": 9,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 9 years of experience."
+  },
+  {
+    "candidate_id": "cand_0262",
+    "name": "Candidate 262",
+    "years_experience": 2,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Java, Spring. 2 years of experience."
+  },
+  {
+    "candidate_id": "cand_0263",
+    "name": "Candidate 263",
+    "years_experience": 8,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: PHP, Laravel. 8 years of experience."
+  },
+  {
+    "candidate_id": "cand_0264",
+    "name": "Candidate 264",
+    "years_experience": 11,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Remote",
+    "profile_text": "Senior engineer building distributed search ranking pipelines and production machine learning services in Python at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 11 years of experience."
+  },
+  {
+    "candidate_id": "cand_0265",
+    "name": "Candidate 265",
+    "years_experience": 16,
+    "skills": [
+      "CPython",
+      "FastAPI"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Principal engineer. Designed high-throughput streaming pipelines across clusters serving ranked results, plus model deployment and feature storage for recommendation workloads. Skills: CPython, FastAPI. 16 years of experience."
+  },
+  {
+    "candidate_id": "cand_0266",
+    "name": "Candidate 266",
+    "years_experience": 3,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "Remote",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: Excel, SQL. 3 years of experience."
+  },
+  {
+    "candidate_id": "cand_0267",
+    "name": "Candidate 267",
+    "years_experience": 11,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 11 years of experience."
+  },
+  {
+    "candidate_id": "cand_0268",
+    "name": "Candidate 268",
+    "years_experience": 9,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: Java, Spring. 9 years of experience."
+  },
+  {
+    "candidate_id": "cand_0269",
+    "name": "Candidate 269",
+    "years_experience": 7,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Remote",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: Java, Spring. 7 years of experience."
+  },
+  {
+    "candidate_id": "cand_0270",
+    "name": "Candidate 270",
+    "years_experience": 7,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 7 years of experience."
+  },
+  {
+    "candidate_id": "cand_0271",
+    "name": "Candidate 271",
+    "years_experience": 6,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: PHP, Laravel. 6 years of experience."
+  },
+  {
+    "candidate_id": "cand_0272",
+    "name": "Candidate 272",
+    "years_experience": 4,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: Excel, SQL. 4 years of experience."
+  },
+  {
+    "candidate_id": "cand_0273",
+    "name": "Candidate 273",
+    "years_experience": 9,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 9 years of experience."
+  },
+  {
+    "candidate_id": "cand_0274",
+    "name": "Candidate 274",
+    "years_experience": 10,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Java, Spring. 10 years of experience."
+  },
+  {
+    "candidate_id": "cand_0275",
+    "name": "Candidate 275",
+    "years_experience": 8,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "Remote",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Excel, SQL. 8 years of experience."
+  },
+  {
+    "candidate_id": "cand_0276",
+    "name": "Candidate 276",
+    "years_experience": 7,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 7 years of experience."
+  },
+  {
+    "candidate_id": "cand_0277",
+    "name": "Candidate 277",
+    "years_experience": 2,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: Java, Spring. 2 years of experience."
+  },
+  {
+    "candidate_id": "cand_0278",
+    "name": "Candidate 278",
+    "years_experience": 12,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "Remote",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: PHP, Laravel. 12 years of experience."
+  },
+  {
+    "candidate_id": "cand_0279",
+    "name": "Candidate 279",
+    "years_experience": 12,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 12 years of experience."
+  },
+  {
+    "candidate_id": "cand_0280",
+    "name": "Candidate 280",
+    "years_experience": 12,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "Remote",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: PHP, Laravel. 12 years of experience."
+  },
+  {
+    "candidate_id": "cand_0281",
+    "name": "Candidate 281",
+    "years_experience": 8,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Remote",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: Java, Spring. 8 years of experience."
+  },
+  {
+    "candidate_id": "cand_0282",
+    "name": "Candidate 282",
+    "years_experience": 7,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 7 years of experience."
+  },
+  {
+    "candidate_id": "cand_0283",
+    "name": "Candidate 283",
+    "years_experience": 8,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Remote",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Java, Spring. 8 years of experience."
+  },
+  {
+    "candidate_id": "cand_0284",
+    "name": "Candidate 284",
+    "years_experience": 5,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "Remote",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: PHP, Laravel. 5 years of experience."
+  },
+  {
+    "candidate_id": "cand_0285",
+    "name": "Candidate 285",
+    "years_experience": 5,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 5 years of experience."
+  },
+  {
+    "candidate_id": "cand_0286",
+    "name": "Candidate 286",
+    "years_experience": 6,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "New York, NY",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: PHP, Laravel. 6 years of experience."
+  },
+  {
+    "candidate_id": "cand_0287",
+    "name": "Candidate 287",
+    "years_experience": 8,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Java, Spring. 8 years of experience."
+  },
+  {
+    "candidate_id": "cand_0288",
+    "name": "Candidate 288",
+    "years_experience": 10,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Remote",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 10 years of experience."
+  },
+  {
+    "candidate_id": "cand_0289",
+    "name": "Candidate 289",
+    "years_experience": 7,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: PHP, Laravel. 7 years of experience."
+  },
+  {
+    "candidate_id": "cand_0290",
+    "name": "Candidate 290",
+    "years_experience": 2,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: Excel, SQL. 2 years of experience."
+  },
+  {
+    "candidate_id": "cand_0291",
+    "name": "Candidate 291",
+    "years_experience": 8,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Remote",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 8 years of experience."
+  },
+  {
+    "candidate_id": "cand_0292",
+    "name": "Candidate 292",
+    "years_experience": 4,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Java, Spring. 4 years of experience."
+  },
+  {
+    "candidate_id": "cand_0293",
+    "name": "Candidate 293",
+    "years_experience": 10,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: PHP, Laravel. 10 years of experience."
+  },
+  {
+    "candidate_id": "cand_0294",
+    "name": "Candidate 294",
+    "years_experience": 5,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Remote",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 5 years of experience."
+  },
+  {
+    "candidate_id": "cand_0295",
+    "name": "Candidate 295",
+    "years_experience": 0,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: PHP, Laravel. 0 years of experience."
+  },
+  {
+    "candidate_id": "cand_0296",
+    "name": "Candidate 296",
+    "years_experience": 9,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "Remote",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: PHP, Laravel. 9 years of experience."
+  },
+  {
+    "candidate_id": "cand_0297",
+    "name": "Candidate 297",
+    "years_experience": 11,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Senior engineer building distributed search ranking pipelines and production machine learning services in Python at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 11 years of experience."
+  },
+  {
+    "candidate_id": "cand_0298",
+    "name": "Candidate 298",
+    "years_experience": 13,
+    "skills": [
+      "CPython",
+      "FastAPI"
+    ],
+    "location": "Remote",
+    "profile_text": "Principal engineer. Designed large-scale service mesh and sharded storage layers serving ranked results, plus model deployment and feature storage for recommendation workloads. Skills: CPython, FastAPI. 13 years of experience."
+  },
+  {
+    "candidate_id": "cand_0299",
+    "name": "Candidate 299",
+    "years_experience": 3,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: Java, Spring. 3 years of experience."
+  },
+  {
+    "candidate_id": "cand_0300",
+    "name": "Candidate 300",
+    "years_experience": 6,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 6 years of experience."
+  },
+  {
+    "candidate_id": "cand_0301",
+    "name": "Candidate 301",
+    "years_experience": 11,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "Remote",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Excel, SQL. 11 years of experience."
+  },
+  {
+    "candidate_id": "cand_0302",
+    "name": "Candidate 302",
+    "years_experience": 8,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Remote",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: Java, Spring. 8 years of experience."
+  },
+  {
+    "candidate_id": "cand_0303",
+    "name": "Candidate 303",
+    "years_experience": 8,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 8 years of experience."
+  },
+  {
+    "candidate_id": "cand_0304",
+    "name": "Candidate 304",
+    "years_experience": 0,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: Excel, SQL. 0 years of experience."
+  },
+  {
+    "candidate_id": "cand_0305",
+    "name": "Candidate 305",
+    "years_experience": 2,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "New York, NY",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Excel, SQL. 2 years of experience."
+  },
+  {
+    "candidate_id": "cand_0306",
+    "name": "Candidate 306",
+    "years_experience": 11,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 11 years of experience."
+  },
+  {
+    "candidate_id": "cand_0307",
+    "name": "Candidate 307",
+    "years_experience": 12,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Remote",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: Java, Spring. 12 years of experience."
+  },
+  {
+    "candidate_id": "cand_0308",
+    "name": "Candidate 308",
+    "years_experience": 4,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "Remote",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: Excel, SQL. 4 years of experience."
+  },
+  {
+    "candidate_id": "cand_0309",
+    "name": "Candidate 309",
+    "years_experience": 11,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 11 years of experience."
+  },
+  {
+    "candidate_id": "cand_0310",
+    "name": "Candidate 310",
+    "years_experience": 3,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "Remote",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: Excel, SQL. 3 years of experience."
+  },
+  {
+    "candidate_id": "cand_0311",
+    "name": "Candidate 311",
+    "years_experience": 8,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: PHP, Laravel. 8 years of experience."
+  },
+  {
+    "candidate_id": "cand_0312",
+    "name": "Candidate 312",
+    "years_experience": 10,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 10 years of experience."
+  },
+  {
+    "candidate_id": "cand_0313",
+    "name": "Candidate 313",
+    "years_experience": 3,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "Remote",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: PHP, Laravel. 3 years of experience."
+  },
+  {
+    "candidate_id": "cand_0314",
+    "name": "Candidate 314",
+    "years_experience": 8,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: Java, Spring. 8 years of experience."
+  },
+  {
+    "candidate_id": "cand_0315",
+    "name": "Candidate 315",
+    "years_experience": 9,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Remote",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 9 years of experience."
+  },
+  {
+    "candidate_id": "cand_0316",
+    "name": "Candidate 316",
+    "years_experience": 0,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "New York, NY",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Java, Spring. 0 years of experience."
+  },
+  {
+    "candidate_id": "cand_0317",
+    "name": "Candidate 317",
+    "years_experience": 10,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: PHP, Laravel. 10 years of experience."
+  },
+  {
+    "candidate_id": "cand_0318",
+    "name": "Candidate 318",
+    "years_experience": 8,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 8 years of experience."
+  },
+  {
+    "candidate_id": "cand_0319",
+    "name": "Candidate 319",
+    "years_experience": 6,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: PHP, Laravel. 6 years of experience."
+  },
+  {
+    "candidate_id": "cand_0320",
+    "name": "Candidate 320",
+    "years_experience": 0,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "New York, NY",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Excel, SQL. 0 years of experience."
+  },
+  {
+    "candidate_id": "cand_0321",
+    "name": "Candidate 321",
+    "years_experience": 11,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 11 years of experience."
+  },
+  {
+    "candidate_id": "cand_0322",
+    "name": "Candidate 322",
+    "years_experience": 10,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "Remote",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: PHP, Laravel. 10 years of experience."
+  },
+  {
+    "candidate_id": "cand_0323",
+    "name": "Candidate 323",
+    "years_experience": 12,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: PHP, Laravel. 12 years of experience."
+  },
+  {
+    "candidate_id": "cand_0324",
+    "name": "Candidate 324",
+    "years_experience": 6,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Remote",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 6 years of experience."
+  },
+  {
+    "candidate_id": "cand_0325",
+    "name": "Candidate 325",
+    "years_experience": 7,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Remote",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Java, Spring. 7 years of experience."
+  },
+  {
+    "candidate_id": "cand_0326",
+    "name": "Candidate 326",
+    "years_experience": 3,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: PHP, Laravel. 3 years of experience."
+  },
+  {
+    "candidate_id": "cand_0327",
+    "name": "Candidate 327",
+    "years_experience": 9,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Remote",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 9 years of experience."
+  },
+  {
+    "candidate_id": "cand_0328",
+    "name": "Candidate 328",
+    "years_experience": 9,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "Remote",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: PHP, Laravel. 9 years of experience."
+  },
+  {
+    "candidate_id": "cand_0329",
+    "name": "Candidate 329",
+    "years_experience": 3,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "New York, NY",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: PHP, Laravel. 3 years of experience."
+  },
+  {
+    "candidate_id": "cand_0330",
+    "name": "Candidate 330",
+    "years_experience": 5,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Senior engineer building distributed search ranking pipelines and production machine learning services in Python at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 5 years of experience."
+  },
+  {
+    "candidate_id": "cand_0331",
+    "name": "Candidate 331",
+    "years_experience": 8,
+    "skills": [
+      "CPython",
+      "FastAPI"
+    ],
+    "location": "Remote",
+    "profile_text": "Principal engineer. Designed large-scale service mesh and sharded storage layers serving ranked results, plus model deployment and feature storage for recommendation workloads. Skills: CPython, FastAPI. 8 years of experience."
+  },
+  {
+    "candidate_id": "cand_0332",
+    "name": "Candidate 332",
+    "years_experience": 0,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: Excel, SQL. 0 years of experience."
+  },
+  {
+    "candidate_id": "cand_0333",
+    "name": "Candidate 333",
+    "years_experience": 5,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 5 years of experience."
+  },
+  {
+    "candidate_id": "cand_0334",
+    "name": "Candidate 334",
+    "years_experience": 0,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Java, Spring. 0 years of experience."
+  },
+  {
+    "candidate_id": "cand_0335",
+    "name": "Candidate 335",
+    "years_experience": 11,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "Remote",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: PHP, Laravel. 11 years of experience."
+  },
+  {
+    "candidate_id": "cand_0336",
+    "name": "Candidate 336",
+    "years_experience": 6,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Remote",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 6 years of experience."
+  },
+  {
+    "candidate_id": "cand_0337",
+    "name": "Candidate 337",
+    "years_experience": 5,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: Java, Spring. 5 years of experience."
+  },
+  {
+    "candidate_id": "cand_0338",
+    "name": "Candidate 338",
+    "years_experience": 8,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "Remote",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Excel, SQL. 8 years of experience."
+  },
+  {
+    "candidate_id": "cand_0339",
+    "name": "Candidate 339",
+    "years_experience": 9,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 9 years of experience."
+  },
+  {
+    "candidate_id": "cand_0340",
+    "name": "Candidate 340",
+    "years_experience": 11,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: PHP, Laravel. 11 years of experience."
+  },
+  {
+    "candidate_id": "cand_0341",
+    "name": "Candidate 341",
+    "years_experience": 7,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Remote",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: Java, Spring. 7 years of experience."
+  },
+  {
+    "candidate_id": "cand_0342",
+    "name": "Candidate 342",
+    "years_experience": 6,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 6 years of experience."
+  },
+  {
+    "candidate_id": "cand_0343",
+    "name": "Candidate 343",
+    "years_experience": 1,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "Remote",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: PHP, Laravel. 1 years of experience."
+  },
+  {
+    "candidate_id": "cand_0344",
+    "name": "Candidate 344",
+    "years_experience": 8,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Java, Spring. 8 years of experience."
+  },
+  {
+    "candidate_id": "cand_0345",
+    "name": "Candidate 345",
+    "years_experience": 9,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 9 years of experience."
+  },
+  {
+    "candidate_id": "cand_0346",
+    "name": "Candidate 346",
+    "years_experience": 1,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: Java, Spring. 1 years of experience."
+  },
+  {
+    "candidate_id": "cand_0347",
+    "name": "Candidate 347",
+    "years_experience": 3,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: PHP, Laravel. 3 years of experience."
+  },
+  {
+    "candidate_id": "cand_0348",
+    "name": "Candidate 348",
+    "years_experience": 8,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 8 years of experience."
+  },
+  {
+    "candidate_id": "cand_0349",
+    "name": "Candidate 349",
+    "years_experience": 5,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "Remote",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Excel, SQL. 5 years of experience."
+  },
+  {
+    "candidate_id": "cand_0350",
+    "name": "Candidate 350",
+    "years_experience": 10,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: PHP, Laravel. 10 years of experience."
+  },
+  {
+    "candidate_id": "cand_0351",
+    "name": "Candidate 351",
+    "years_experience": 11,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Remote",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 11 years of experience."
+  },
+  {
+    "candidate_id": "cand_0352",
+    "name": "Candidate 352",
+    "years_experience": 6,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Remote",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Java, Spring. 6 years of experience."
+  },
+  {
+    "candidate_id": "cand_0353",
+    "name": "Candidate 353",
+    "years_experience": 12,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Remote",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Java, Spring. 12 years of experience."
+  },
+  {
+    "candidate_id": "cand_0354",
+    "name": "Candidate 354",
+    "years_experience": 6,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 6 years of experience."
+  },
+  {
+    "candidate_id": "cand_0355",
+    "name": "Candidate 355",
+    "years_experience": 5,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: PHP, Laravel. 5 years of experience."
+  },
+  {
+    "candidate_id": "cand_0356",
+    "name": "Candidate 356",
+    "years_experience": 9,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "New York, NY",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Java, Spring. 9 years of experience."
+  },
+  {
+    "candidate_id": "cand_0357",
+    "name": "Candidate 357",
+    "years_experience": 10,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 10 years of experience."
+  },
+  {
+    "candidate_id": "cand_0358",
+    "name": "Candidate 358",
+    "years_experience": 4,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: Java, Spring. 4 years of experience."
+  },
+  {
+    "candidate_id": "cand_0359",
+    "name": "Candidate 359",
+    "years_experience": 12,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "Remote",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: Excel, SQL. 12 years of experience."
+  },
+  {
+    "candidate_id": "cand_0360",
+    "name": "Candidate 360",
+    "years_experience": 8,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Remote",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 8 years of experience."
+  },
+  {
+    "candidate_id": "cand_0361",
+    "name": "Candidate 361",
+    "years_experience": 7,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Excel, SQL. 7 years of experience."
+  },
+  {
+    "candidate_id": "cand_0362",
+    "name": "Candidate 362",
+    "years_experience": 12,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: PHP, Laravel. 12 years of experience."
+  },
+  {
+    "candidate_id": "cand_0363",
+    "name": "Candidate 363",
+    "years_experience": 7,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Senior engineer building distributed search ranking pipelines and production machine learning services in Python at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 7 years of experience."
+  },
+  {
+    "candidate_id": "cand_0364",
+    "name": "Candidate 364",
+    "years_experience": 8,
+    "skills": [
+      "Py3",
+      "Django",
+      "Celery"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Principal engineer. Designed high-throughput streaming pipelines across clusters serving ranked results, plus model deployment and feature storage for recommendation workloads. Skills: Py3, Django, Celery. 8 years of experience."
+  },
+  {
+    "candidate_id": "cand_0365",
+    "name": "Candidate 365",
+    "years_experience": 11,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Remote",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: Java, Spring. 11 years of experience."
+  },
+  {
+    "candidate_id": "cand_0366",
+    "name": "Candidate 366",
+    "years_experience": 10,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 10 years of experience."
+  },
+  {
+    "candidate_id": "cand_0367",
+    "name": "Candidate 367",
+    "years_experience": 7,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "Remote",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: PHP, Laravel. 7 years of experience."
+  },
+  {
+    "candidate_id": "cand_0368",
+    "name": "Candidate 368",
+    "years_experience": 8,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Remote",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Java, Spring. 8 years of experience."
+  },
+  {
+    "candidate_id": "cand_0369",
+    "name": "Candidate 369",
+    "years_experience": 8,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 8 years of experience."
+  },
+  {
+    "candidate_id": "cand_0370",
+    "name": "Candidate 370",
+    "years_experience": 1,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: Excel, SQL. 1 years of experience."
+  },
+  {
+    "candidate_id": "cand_0371",
+    "name": "Candidate 371",
+    "years_experience": 8,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "Remote",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Excel, SQL. 8 years of experience."
+  },
+  {
+    "candidate_id": "cand_0372",
+    "name": "Candidate 372",
+    "years_experience": 11,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Remote",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 11 years of experience."
+  },
+  {
+    "candidate_id": "cand_0373",
+    "name": "Candidate 373",
+    "years_experience": 1,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "Remote",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: PHP, Laravel. 1 years of experience."
+  },
+  {
+    "candidate_id": "cand_0374",
+    "name": "Candidate 374",
+    "years_experience": 3,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Java, Spring. 3 years of experience."
+  },
+  {
+    "candidate_id": "cand_0375",
+    "name": "Candidate 375",
+    "years_experience": 12,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Remote",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 12 years of experience."
+  },
+  {
+    "candidate_id": "cand_0376",
+    "name": "Candidate 376",
+    "years_experience": 3,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Java, Spring. 3 years of experience."
+  },
+  {
+    "candidate_id": "cand_0377",
+    "name": "Candidate 377",
+    "years_experience": 9,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: Excel, SQL. 9 years of experience."
+  },
+  {
+    "candidate_id": "cand_0378",
+    "name": "Candidate 378",
+    "years_experience": 13,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 13 years of experience."
+  },
+  {
+    "candidate_id": "cand_0379",
+    "name": "Candidate 379",
+    "years_experience": 12,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Java, Spring. 12 years of experience."
+  },
+  {
+    "candidate_id": "cand_0380",
+    "name": "Candidate 380",
+    "years_experience": 4,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Excel, SQL. 4 years of experience."
+  },
+  {
+    "candidate_id": "cand_0381",
+    "name": "Candidate 381",
+    "years_experience": 9,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 9 years of experience."
+  },
+  {
+    "candidate_id": "cand_0382",
+    "name": "Candidate 382",
+    "years_experience": 4,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Remote",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Java, Spring. 4 years of experience."
+  },
+  {
+    "candidate_id": "cand_0383",
+    "name": "Candidate 383",
+    "years_experience": 2,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Remote",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: Java, Spring. 2 years of experience."
+  },
+  {
+    "candidate_id": "cand_0384",
+    "name": "Candidate 384",
+    "years_experience": 9,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 9 years of experience."
+  },
+  {
+    "candidate_id": "cand_0385",
+    "name": "Candidate 385",
+    "years_experience": 3,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: PHP, Laravel. 3 years of experience."
+  },
+  {
+    "candidate_id": "cand_0386",
+    "name": "Candidate 386",
+    "years_experience": 4,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: Java, Spring. 4 years of experience."
+  },
+  {
+    "candidate_id": "cand_0387",
+    "name": "Candidate 387",
+    "years_experience": 8,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 8 years of experience."
+  },
+  {
+    "candidate_id": "cand_0388",
+    "name": "Candidate 388",
+    "years_experience": 12,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: Java, Spring. 12 years of experience."
+  },
+  {
+    "candidate_id": "cand_0389",
+    "name": "Candidate 389",
+    "years_experience": 0,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: Java, Spring. 0 years of experience."
+  },
+  {
+    "candidate_id": "cand_0390",
+    "name": "Candidate 390",
+    "years_experience": 8,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 8 years of experience."
+  },
+  {
+    "candidate_id": "cand_0391",
+    "name": "Candidate 391",
+    "years_experience": 5,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Remote",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Java, Spring. 5 years of experience."
+  },
+  {
+    "candidate_id": "cand_0392",
+    "name": "Candidate 392",
+    "years_experience": 1,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: Java, Spring. 1 years of experience."
+  },
+  {
+    "candidate_id": "cand_0393",
+    "name": "Candidate 393",
+    "years_experience": 14,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Remote",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 14 years of experience."
+  },
+  {
+    "candidate_id": "cand_0394",
+    "name": "Candidate 394",
+    "years_experience": 1,
+    "skills": [
+      "PHP",
+      "Laravel"
+    ],
+    "location": "Remote",
+    "profile_text": "Marketing analyst producing campaign dashboards. Skills: PHP, Laravel. 1 years of experience."
+  },
+  {
+    "candidate_id": "cand_0395",
+    "name": "Candidate 395",
+    "years_experience": 7,
+    "skills": [
+      "Excel",
+      "SQL"
+    ],
+    "location": "New York, NY",
+    "profile_text": "IT support specialist handling desktop provisioning and ticketing. Skills: Excel, SQL. 7 years of experience."
+  },
+  {
+    "candidate_id": "cand_0396",
+    "name": "Candidate 396",
+    "years_experience": 5,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Remote",
+    "profile_text": "Senior engineer building distributed search ranking pipelines and production machine learning services in Python at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 5 years of experience."
+  },
+  {
+    "candidate_id": "cand_0397",
+    "name": "Candidate 397",
+    "years_experience": 16,
+    "skills": [
+      "Python3",
+      "Ray"
+    ],
+    "location": "New York, NY",
+    "profile_text": "Principal engineer. Designed high-throughput streaming pipelines across clusters serving ranked results, plus model deployment and feature storage for recommendation workloads. Skills: Python3, Ray. 16 years of experience."
+  },
+  {
+    "candidate_id": "cand_0398",
+    "name": "Candidate 398",
+    "years_experience": 5,
+    "skills": [
+      "Java",
+      "Spring"
+    ],
+    "location": "Seattle, WA",
+    "profile_text": "Frontend developer focused on responsive web design and CSS. Skills: Java, Spring. 5 years of experience."
+  },
+  {
+    "candidate_id": "cand_0399",
+    "name": "Candidate 399",
+    "years_experience": 10,
+    "skills": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes",
+      "Spark"
+    ],
+    "location": "Remote",
+    "profile_text": "Technical writer documenting distributed search ranking pipelines and production machine learning systems. Wrote Python tutorials and QA test plans for the platform team at scale. Skills: Python, Distributed Systems, Kubernetes, Spark. 10 years of experience."
+  }
+]
