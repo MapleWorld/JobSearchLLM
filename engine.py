@@ -1,14 +1,17 @@
 """
-engine.py — 检索排序主引擎。
+engine.py — retrieval and ranking engine.
 
-关键设计：**分级 pipeline（--level 0..3）**。
-每一级都是可独立提交的完整系统，级别越高越准但越慢。
-75 分钟里你永远有一个能交的版本，不会出现"设计很美但跑不出结果"。
+Key design: **a leveled pipeline (--level 0..3)**.
+Every level is a complete, independently submittable system. Higher levels
+are more accurate but slower. Within 75 minutes you always have something
+you can submit, so you never end up with a beautiful design and no results.
 
-  L0  BM25 baseline            无 LLM，~30s 出结果，用来攒第一个分数和 gold set
-  L1  + LLM 编译 + 硬过滤       结构化 criteria，graded relaxation
-  L2  + Dense 检索 + RRF 融合   真正的 hybrid
-  L3  + LLM 逐条 criteria 判定  最终排序：先按硬条件命中数，再按软性 fit
+  L0  BM25 baseline           No LLM, results in ~30s. Seeds your first
+                              score and the gold set.
+  L1  + LLM compile + filter  Structured criteria, graded relaxation.
+  L2  + Dense retrieval + RRF Genuinely hybrid.
+  L3  + Per-criterion judge   Final order: hard criteria met first, then
+                              soft fit.
 """
 
 from __future__ import annotations
@@ -29,7 +32,7 @@ from diagnostics import SearchTrace
 
 
 # ======================================================================
-# 数据模型
+# Data models
 # ======================================================================
 
 @dataclass
@@ -48,8 +51,8 @@ class JobDescription:
 class Candidate:
     candidate_id: str
     name: str = ""
-    raw: Dict[str, Any] = field(default_factory=dict)   # 原始记录，别丢
-    profile_text: str = ""                              # 用于 BM25 / embedding 的拼接文本
+    raw: Dict[str, Any] = field(default_factory=dict)   # Original record; never discard it
+    profile_text: str = ""                              # Concatenated text for BM25 / embedding
     years_experience: Optional[float] = None
     skills: List[str] = field(default_factory=list)
     location: str = ""
@@ -58,14 +61,14 @@ class Candidate:
 
 @dataclass
 class Criteria:
-    """LLM 从 JD 编译出来的结构化查询。"""
+    """Structured query compiled from the job description by the LLM."""
     min_years_experience: float = 0.0
     required_skills: List[str] = field(default_factory=list)
     skill_synonyms: Dict[str, List[str]] = field(default_factory=dict)
     required_locations: List[str] = field(default_factory=list)
     semantic_query: str = ""
     keyword_query: str = ""
-    checkable_criteria: List[str] = field(default_factory=list)  # 逐条可判定的硬条件
+    checkable_criteria: List[str] = field(default_factory=list)  # Atomic yes/no hard criteria
 
     @staticmethod
     def fallback(jd: JobDescription) -> "Criteria":
@@ -86,7 +89,7 @@ class ScoredCandidate:
     retrieval_score: float = 0.0
     checks: List[Dict] = field(default_factory=list)
     reasoning: str = ""
-    degraded: bool = False       # True 表示这个分数是 LLM 失败后的兜底分
+    degraded: bool = False       # True means this score is a fallback after an LLM failure
 
 
 @dataclass
@@ -94,14 +97,14 @@ class SearchConfig:
     level: int = 3
     retrieve_k: int = 30
     final_k: int = 10
-    min_pool_after_filter: int = 25       # 低于这个数就触发 relaxation
+    min_pool_after_filter: int = 25       # Below this, relaxation kicks in
     rrf_k: int = 60
-    rerank_batch_size: int = 5            # 一次 prompt 塞几个候选人
+    rerank_batch_size: int = 5            # Candidates packed into one judge prompt
     max_concurrency: int = 8
     prompt_version: str = "v1"
     llm_model: str = "claude-sonnet-4-6"
     embed_model: str = "text-embedding-3-small"
-    hard_criteria_weight: float = 1000.0  # 字典序：先比硬条件数，再比 soft
+    hard_criteria_weight: float = 1000.0  # Lexicographic: hard count first, then soft
     use_cache: bool = True
 
     def signature(self) -> Dict:
@@ -109,14 +112,15 @@ class SearchConfig:
 
 
 # ======================================================================
-# LLM 客户端（带缓存 + 重试 + 健壮 JSON 解析）
+# LLM client (caching + retry + robust JSON parsing)
 # ======================================================================
 
 _JSON_FENCE = re.compile(r"```(?:json)?\s*(.*?)\s*```", re.DOTALL)
 
 
 def parse_json_loose(raw: str) -> Any:
-    """LLM 的 JSON 输出经常带 markdown fence / 前后废话。三层兜底。"""
+    """LLM JSON output often arrives wrapped in a markdown fence or padded with
+    prose. Three fallback layers."""
     if not raw:
         raise ValueError("empty response")
     m = _JSON_FENCE.search(raw)
@@ -127,7 +131,7 @@ def parse_json_loose(raw: str) -> Any:
         return json.loads(raw)
     except json.JSONDecodeError:
         pass
-    # 兜底：抓第一个 {...} 或 [...] 平衡括号
+    # Last resort: scan for the first balanced {...} or [...] block
     for open_c, close_c in (("{", "}"), ("[", "]")):
         start = raw.find(open_c)
         if start == -1:
@@ -148,8 +152,9 @@ def parse_json_loose(raw: str) -> Any:
 
 class LLMClient:
     """
-    包一层，把 cache / retry / 并发限流 / 用量统计都收在这里。
-    换 provider 只需要改 _raw_chat 和 _raw_embed 两个方法。
+    A thin wrapper collecting caching, retry, concurrency limiting and usage
+    statistics in one place. Switching provider means implementing only
+    _raw_chat and _raw_embed.
     """
 
     def __init__(self, cache: DiskCache, config: SearchConfig):
@@ -159,14 +164,14 @@ class LLMClient:
         self.calls = Counter()
         self.latency_ms: List[float] = []
 
-    # ---- 需要替换成真实 SDK 的两个方法 ----
+    # ---- The two methods a real provider must implement ----
     async def _raw_chat(self, system: str, user: str) -> str:
         raise NotImplementedError
 
     async def _raw_embed(self, texts: List[str]) -> List[List[float]]:
         raise NotImplementedError
 
-    # ---- 对外接口 ----
+    # ---- Public interface ----
     async def chat_json(self, system: str, user: str, ns: str) -> Any:
         payload = {
             "system": system,
@@ -198,7 +203,8 @@ class LLMClient:
         raise RuntimeError(f"chat failed after retries: {last_err}")
 
     async def embed(self, texts: List[str]) -> List[List[float]]:
-        """批量 embedding + 逐条缓存。别在循环里 await 单条。"""
+        """Batch embedding with per-item caching. Never await one item per loop
+        iteration."""
         out: List[Optional[List[float]]] = [None] * len(texts)
         todo: List[int] = []
         for i, t in enumerate(texts):
@@ -231,7 +237,7 @@ class LLMClient:
 
 
 # ======================================================================
-# BM25（纯 python，零依赖，L0 baseline 用）
+# BM25 (pure Python, zero deps, powers the L0 baseline)
 # ======================================================================
 
 _TOKEN = re.compile(r"[a-z0-9\+\#\.]+")
@@ -273,7 +279,8 @@ class BM25:
 
 
 def rrf_fuse(rankings: Sequence[List[str]], k: int = 60) -> List[Tuple[str, float]]:
-    """Reciprocal Rank Fusion —— 融合不同量纲的检索通道，比加权求和稳。"""
+    """Reciprocal Rank Fusion - merges retrieval channels whose scores are on
+    incomparable scales. More stable than weighted summation."""
     scores: Dict[str, float] = {}
     for ranking in rankings:
         for rank, cid in enumerate(ranking):
@@ -364,7 +371,7 @@ One entry per candidate, same order. Evidence must be verbatim from the profile.
 
 
 # ======================================================================
-# 引擎
+# Engine
 # ======================================================================
 
 class CandidateSearchEngine:
@@ -373,7 +380,7 @@ class CandidateSearchEngine:
         self.config = config
         self._bm25_cache: Dict[int, BM25] = {}
 
-    # ---------- Phase 1: 编译 ----------
+    # ---------- Phase 1: compile ----------
     async def compile_criteria(self, jd: JobDescription, trace: SearchTrace) -> Criteria:
         if self.config.level == 0:
             return Criteria.fallback(jd)
@@ -401,17 +408,18 @@ class CandidateSearchEngine:
         trace.meta["compile_ms"] = round((time.perf_counter() - t0) * 1000)
         return crit
 
-    # ---------- Phase 2a: 分级放松的硬过滤 ----------
+    # ---------- Phase 2a: hard filter with graded relaxation ----------
     _SKILL_RE_CACHE: Dict[str, Any] = {}
 
     @staticmethod
     def _skill_pattern(variant: str):
         """
-        词边界匹配，取代裸 `in`。
-        裸子串会让 "go" 命中 "google"、"r" 命中 "react"、"c" 命中 "recruiter"，
-        JD 里出现 Go / R / C / C++ 时硬过滤会**静默失效**。
-        \\b 对 c++ / c# 这类以符号结尾的技能名不适用，所以右边界用
-        「非字母数字或行尾」来判定。
+        Word-boundary matching, replacing a bare `in` test.
+        A raw substring makes "go" match "google", "r" match "react" and "c"
+        match "recruiter", so whenever a JD mentions Go / R / C / C++ the hard
+        filter fails **silently**.
+        \\b does not work for skills ending in punctuation such as c++ or c#,
+        so the right boundary is expressed as "not a word char or symbol".
         """
         pat = CandidateSearchEngine._SKILL_RE_CACHE.get(variant)
         if pat is None:
@@ -431,8 +439,9 @@ class CandidateSearchEngine:
         self, cands: List[Candidate], crit: Criteria, trace: SearchTrace
     ) -> List[Candidate]:
         """
-        分级放松：从最严开始往下退，直到池子够大。
-        不要一步退到"完全不过滤" —— 那等于放弃了硬条件信号。
+        Graded relaxation: start strict and step down until the pool is large
+        enough. Never jump straight to "no filtering at all" - that throws away
+        the hard-criteria signal entirely.
         """
         if self.config.level == 0 or not (crit.required_skills or crit.min_years_experience):
             trace.meta["relaxation_level"] = "off"
@@ -465,25 +474,28 @@ class CandidateSearchEngine:
                 trace.meta["relaxation_level"] = name
                 return kept
         trace.meta["relaxation_level"] = "L4_semantic_only"
-        trace.warn("hard filter 无法产出足够候选人，退化为纯语义检索")
+        trace.warn("hard filter could not yield enough candidates; "
+                   "falling back to semantic-only retrieval")
         return cands
 
-    # ---------- Phase 2b: 混合检索 ----------
+    # ---------- Phase 2b: hybrid retrieval ----------
     async def retrieve(
         self, crit: Criteria, pool: List[Candidate], trace: SearchTrace
     ) -> List[Tuple[Candidate, float]]:
         by_id = {c.candidate_id: c for c in pool}
         rankings: List[List[str]] = []
 
-        # 通道 1: BM25（永远开着 —— 专有名词、公司名、证书靠它）
+        # Channel 1: BM25, always on - proper nouns, company names and
+        # certifications depend on it
         t0 = time.perf_counter()
-        # 语料不变就复用索引。原来每题重建：10k 候选人 × 20 题 = 41s 纯浪费，
-        # 50k 规模是 215s。key 用候选人 id 序列的 hash。
+        # Reuse the index while the corpus is unchanged. Rebuilding per job
+        # cost 41s of pure waste at 10k candidates x 20 jobs, and 215s at 50k.
+        # Keyed on a hash of the candidate id sequence.
         ck = hash(tuple(c.candidate_id for c in pool))
         bm = self._bm25_cache.get(ck)
         if bm is None:
             bm = BM25([c.profile_text for c in pool])
-            self._bm25_cache = {ck: bm}   # 只留一份，避免多题累积占内存
+            self._bm25_cache = {ck: bm}   # Keep exactly one, so jobs do not accumulate memory
         s = bm.scores(crit.keyword_query or crit.semantic_query)
         order = np.argsort(-s)
         lex_rank = [pool[i].candidate_id for i in order]
@@ -496,7 +508,7 @@ class CandidateSearchEngine:
             note="lexical channel",
         )
 
-        # 通道 2: Dense（level >= 2）
+        # Channel 2: dense (level >= 2)
         if self.config.level >= 2:
             t0 = time.perf_counter()
             try:
@@ -537,7 +549,7 @@ class CandidateSearchEngine:
         )
         return [(by_id[cid], sc) for cid, sc in fused if cid in by_id]
 
-    # ---------- Phase 3: LLM 逐条判定 ----------
+    # ---------- Phase 3: per-criterion LLM judging ----------
     async def rerank(
         self,
         jd: JobDescription,
@@ -548,7 +560,7 @@ class CandidateSearchEngine:
         n_crit = len(crit.checkable_criteria or jd.hard_criteria) or 1
 
         if self.config.level < 3:
-            # 不做 LLM 重排，直接用检索分
+            # No LLM rerank at this level; use the retrieval score directly
             return [
                 ScoredCandidate(
                     candidate_id=c.candidate_id,
@@ -568,7 +580,8 @@ class CandidateSearchEngine:
         )
         scored = [s for group in results for s in group]
 
-        # 最终排序：字典序 —— 先比通过的硬条件数，再比软性 fit，最后比检索分
+        # Final ordering is lexicographic: hard criteria passed, then soft fit,
+        # then retrieval score as the tie-breaker
         for s in scored:
             s.hard_total = n_crit
             s.final_score = (
@@ -604,7 +617,7 @@ class CandidateSearchEngine:
             for c in cands:
                 r = by_id.get(c.candidate_id)
                 if r is None:
-                    trace.warn(f"judge 漏返回 {c.candidate_id}，用检索分兜底")
+                    trace.warn(f"judge omitted {c.candidate_id}; falling back to retrieval score")
                     out.append(
                         ScoredCandidate(
                             candidate_id=c.candidate_id,
@@ -629,8 +642,9 @@ class CandidateSearchEngine:
                 )
             return out
         except Exception as e:  # noqa: BLE001
-            # 关键：失败不给 0 分（那会静默丢掉好候选人），退回检索分
-            trace.warn(f"judge batch failed ({e}), 退回检索分")
+            # Critical: a failure must not score 0 - that silently discards good
+            # candidates. Fall back to the retrieval score instead.
+            trace.warn(f"judge batch failed ({e}); falling back to retrieval score")
             return [
                 ScoredCandidate(
                     candidate_id=c.candidate_id,

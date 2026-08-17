@@ -1,26 +1,32 @@
 """
-llm_clients.py — 真实 LLM 客户端。
+llm_clients.py — real LLM clients.
 
-为什么走 REST 而不是 google-genai SDK：
-  这个项目的第三方依赖只有 numpy。面试环境里 `pip install` 失败是真会发生的
-  事，多一个依赖多一个风险点。下面用 urllib 直连，零依赖，且可以对着一个本地
-  假服务器完整测试请求/响应处理 —— 而不是"写完了但没跑过"。
-  想用 SDK 也行，替换 _post 即可，其余逻辑不变。
+Why REST instead of the google-genai SDK:
+  numpy is this project's only third-party dependency. `pip install` failing
+  in an interview environment is a real event, and every extra dependency is
+  another way to lose time. The code below talks to the API over urllib with
+  zero dependencies, and - just as importantly - it can be fully tested
+  against a local fake server, rather than being "written but never run".
+  If you prefer the SDK, replace _post; nothing else changes.
 
-已内置的三个防御（每一个都对应一个会静默出错的真实陷阱）：
+Three guards are built in. Each one corresponds to a real trap that fails
+silently rather than loudly:
 
-  1. embedding 条数校验
-     gemini-embedding-2 收到多条输入时会返回**单个聚合向量**。我们的
-     _raw_embed 契约是"传 N 条回 N 条"，数量对不上会让后面的 zip() 静默
-     丢数据。这里直接 assert 并给出可操作的报错。
+  1. Embedding count check
+     gemini-embedding-2 returns a SINGLE aggregated vector when given
+     multiple inputs. The _raw_embed contract is "pass N, get N back", and a
+     count mismatch would make the downstream zip() drop data without any
+     error. This asserts on it and returns an actionable message.
 
-  2. embedding 维度一致性校验
-     缓存里混入不同 embed_model 的向量会让 numpy 在 retrieve() 里抛
-     inhomogeneous shape，整轮 run 挂掉。第一次调用时锁定维度。
+  2. Embedding dimension consistency check
+     Vectors from different embed_models mixed into one cache make numpy
+     raise an inhomogeneous-shape error inside retrieve(), killing the whole
+     run. The dimension is locked on first call.
 
-  3. finishReason 检查
-     MAX_TOKENS 截断会产生"看起来像 JSON 的半截字符串"，parse 失败后整个
-     batch 降级。这里显式识别并给出加大 max_output_tokens 的提示。
+  3. finishReason check
+     A MAX_TOKENS truncation produces a string that looks like JSON but is
+     cut in half; parsing fails and the entire batch degrades. This detects
+     it explicitly and tells you to raise max_output_tokens.
 """
 
 from __future__ import annotations
@@ -42,8 +48,9 @@ class GeminiClient(LLMClient):
     """
     Chat  : {base}/models/{model}:generateContent
     Embed : {base}/models/{model}:batchEmbedContents
-            —— 用 batch 端点而非 embedContent 传 list，天然绕开聚合陷阱，
-               每个 request 项各自产出一个向量。
+            Uses the batch endpoint rather than passing a list to
+            embedContent, which sidesteps the aggregation trap by
+            construction: each request item yields its own vector.
     """
 
     def __init__(
@@ -84,12 +91,13 @@ class GeminiClient(LLMClient):
                 raise RuntimeError(f"RATE_LIMIT (429): {detail}") from e
             if e.code in (401, 403):
                 raise RuntimeError(
-                    f"AUTH ({e.code}): key 无效或未启用 API。检查 .env 里的 "
+                    f"AUTH ({e.code}): invalid key, or the API is not enabled. "
+                    f"Check "
                     f"GEMINI_API_KEY。{detail}"
                 ) from e
             if e.code == 404:
                 raise RuntimeError(
-                    f"MODEL_NOT_FOUND (404): 模型名可能过期或拼错 —— {detail}"
+                    f"MODEL_NOT_FOUND (404): model name may be retired or misspelled - {detail}"
                 ) from e
             raise RuntimeError(f"HTTP {e.code}: {detail}") from e
 
@@ -99,7 +107,8 @@ class GeminiClient(LLMClient):
             "contents": [{"role": "user", "parts": [{"text": user}]}],
             "systemInstruction": {"parts": [{"text": system}]},
             "generationConfig": {
-                # 注意：新版 Gemini 已废弃 temperature / top_p / top_k，不要再传
+                # Note: recent Gemini models deprecate temperature / top_p /
+                # top_k - do not send them.
                 "responseMimeType": "application/json",
                 "maxOutputTokens": self.max_output_tokens,
             },
@@ -109,7 +118,8 @@ class GeminiClient(LLMClient):
         )
 
         if pf := data.get("promptFeedback", {}).get("blockReason"):
-            raise RuntimeError(f"PROMPT_BLOCKED: {pf}（候选人简历触发了安全过滤）")
+            raise RuntimeError(
+                f"PROMPT_BLOCKED: {pf} (a candidate profile tripped the safety filter)")
 
         cands = data.get("candidates") or []
         if not cands:
@@ -121,8 +131,8 @@ class GeminiClient(LLMClient):
 
         if reason == "MAX_TOKENS":
             raise RuntimeError(
-                f"MAX_TOKENS 截断（已输出 {len(text)} 字符）。"
-                f"调大 max_output_tokens，或减小 --batch-size"
+                f"MAX_TOKENS truncation ({len(text)} chars emitted). "
+                f"Raise max_output_tokens, or lower --batch-size"
             )
         if reason in ("SAFETY", "RECITATION", "BLOCKLIST"):
             raise RuntimeError(f"BLOCKED: finishReason={reason}")
@@ -151,34 +161,36 @@ class GeminiClient(LLMClient):
         embs = data.get("embeddings") or []
         vecs = [e.get("values") or [] for e in embs]
 
-        # --- 防御 1：条数必须一一对应 ---
+        # --- Guard 1: counts must correspond one-to-one ---
         if len(vecs) != len(texts):
             raise RuntimeError(
-                f"EMBED_COUNT_MISMATCH: 传入 {len(texts)} 条，返回 {len(vecs)} 条。"
-                f"若 {model} 把多条输入聚合成了单个向量，改用 "
-                f"gemini-embedding-001，或逐条调用。"
+                f"EMBED_COUNT_MISMATCH: sent {len(texts)}, received {len(vecs)}. "
+                f"If {model} aggregated the inputs into a single vector, switch "
+                f"to gemini-embedding-001, or embed one item per call."
             )
 
-        # --- 防御 2：维度必须自始至终一致 ---
+        # --- Guard 2: dimension must stay consistent throughout ---
         dims = {len(v) for v in vecs if v}
         if len(dims) > 1:
-            raise RuntimeError(f"EMBED_DIM_INCONSISTENT: 同一批出现多种维度 {dims}")
+            raise RuntimeError(f"EMBED_DIM_INCONSISTENT: mixed dimensions in one batch: {dims}")
         if dims:
             d = dims.pop()
             if self._locked_dim is None:
                 self._locked_dim = d
             elif d != self._locked_dim:
                 raise RuntimeError(
-                    f"EMBED_DIM_CHANGED: 之前是 {self._locked_dim}，现在是 {d}。"
-                    f"换过 embed_model 的话请先清缓存：rm cache.sqlite3"
+                    f"EMBED_DIM_CHANGED: was {self._locked_dim}, now {d}. "
+                    f"If you switched embed_model, clear the cache first: "
+                    f"rm cache.sqlite3"
                 )
         return vecs
 
     # ------------------------------------------------------------------
     async def selftest(self) -> Dict[str, Any]:
         """
-        烧 quota 之前先打两发最小请求，把 key / 模型名 / 维度 / 聚合陷阱
-        一次性验完。现场第一件事就该跑这个。
+        Fire two minimal requests before burning any quota, validating the
+        key, the model names, the embedding dimension and the aggregation
+        trap in one shot. This should be the first thing you run on the day.
         """
         out: Dict[str, Any] = {}
         try:
@@ -204,7 +216,7 @@ class GeminiClient(LLMClient):
 # ======================================================================
 
 def make_client(cache, config: SearchConfig, settings) -> LLMClient:
-    """按 .env 里的 LLM_PROVIDER 造客户端。"""
+    """Construct a client based on LLM_PROVIDER in .env."""
     p = settings.provider
     if p == "gemini":
         return GeminiClient(
@@ -212,11 +224,12 @@ def make_client(cache, config: SearchConfig, settings) -> LLMClient:
             api_key=settings.chat_key,
             embed_key=settings.embed_key,
             embed_dim=settings.embed_dim,
-            # 允许指向本地假服务器做集成测试，或指向代理/网关
+            # Allows pointing at a local fake server for integration tests,
+            # or at a proxy / gateway
             base_url=os.environ.get("GEMINI_BASE_URL", GEMINI_BASE),
         )
     raise SystemExit(
-        f"provider='{p}' 的客户端尚未实现。当前只有 gemini。\n"
-        f"照着 GeminiClient 实现 _raw_chat / _raw_embed 即可（约 40 行），"
-        f"或在 .env 里设 LLM_PROVIDER=gemini。"
+        f"No client implemented for provider='{p}'. Only gemini is available.\n"
+        f"Implement _raw_chat / _raw_embed following GeminiClient (~40 lines), "
+        f"or set LLM_PROVIDER=gemini in .env."
     )

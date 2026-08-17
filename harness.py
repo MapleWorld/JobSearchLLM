@@ -1,18 +1,20 @@
 """
-harness.py — Evaluation 闭环。
+harness.py — the evaluation loop.
 
-题目要求"根据测试结果不断迭代，最终提交所有 Evaluation Results"。
-这个文件负责的就是那个闭环：
+The task asks you to iterate on test results and finally submit all
+evaluation results. This file owns that loop:
 
-    跑 pipeline -> 提交 eval endpoint -> 解析分数 -> 落盘 -> 吸收进 gold set
-        -> 打印漏斗诊断 -> 改配置 -> 再跑 -> 对比两次 run 的每题 delta
+    run pipeline -> submit to eval endpoint -> parse scores -> persist ->
+    absorb into gold set -> print funnel diagnostics -> change config ->
+    re-run -> compare per-job deltas between runs
 
-每次 run 都会在 runs/<run_id>/ 下留一份完整快照（config + results + traces +
-summary），最后一步 `python harness.py export` 直接产出可提交的汇总文件。
+Every run leaves a complete snapshot under runs/<run_id>/ (config, results,
+traces, summary), and `python harness.py export` turns those into the
+submittable summary file.
 
-⚠️ 开场 5 分钟必须做的一件事：
-   把 EvalClient.ADAPTER 里的三个函数改成和真实 endpoint 的 schema 对齐。
-   其余代码不需要动。
+IMPORTANT - do this in the first five minutes:
+   Align the three ADAPTER functions in EvalClient with the real endpoint's
+   schema. Nothing else needs to change.
 """
 
 from __future__ import annotations
@@ -47,13 +49,14 @@ RUNS_DIR = "runs"
 
 
 # ======================================================================
-# Eval Endpoint 客户端
+# Eval endpoint client
 # ======================================================================
 
 class EvalClient:
     """
-    ADAPTER 区是唯一需要按真实 endpoint 改的地方。
-    先用 curl 打一发，把响应贴进来，再对着改这三个函数。
+    The ADAPTER block is the only part that must be adapted to the real
+    endpoint. curl it once, paste the response, then edit these three
+    functions against it.
     """
 
     def __init__(self, base_url: str, api_key: str = "", timeout: float = 30.0):
@@ -61,7 +64,7 @@ class EvalClient:
         self.api_key = api_key
         self.timeout = timeout
 
-    # ---------------- ADAPTER: 按真实 schema 修改 ----------------
+    # ---------------- ADAPTER: edit to match the real schema ----------------
     def _build_payload(self, job_id: str, candidate_ids: List[str]) -> Dict:
         return {"job_id": job_id, "candidate_ids": candidate_ids}
 
@@ -72,7 +75,7 @@ class EvalClient:
 
     @staticmethod
     def _walk(node, depth: int = 0):
-        """深度优先遍历整棵 JSON 树 —— 不假设字段在第几层。"""
+        """Depth-first walk of the whole JSON tree - assumes nothing about depth."""
         if depth > 6:
             return
         yield node
@@ -86,14 +89,16 @@ class EvalClient:
     @staticmethod
     def extract_overall_score(resp: Dict) -> float:
         """
-        抠出这道题的总分。递归查找，兼容 {"data":{"evaluation":{"precision":..}}}
-        这类嵌套结构 —— 硬编码顶层 key 在真实 API 上很容易落空。
+        Extract this job's aggregate score. Searches recursively so nested
+        shapes like {"data":{"evaluation":{"precision":..}}} still resolve -
+        hard-coding top-level keys misses constantly against real APIs.
         """
         for node in EvalClient._walk(resp):
             if isinstance(node, dict):
                 for k in EvalClient.SCORE_KEYS:
                     v = node.get(k)
-                    # 排除逐候选人条目里的 score（它们同名但含 id 字段）
+                    # Skip per-candidate entries, which share the key name but
+                    # also carry an id field
                     if isinstance(v, (int, float)) and not isinstance(v, bool):
                         if not any(i in node for i in EvalClient.ID_KEYS):
                             return float(v)
@@ -105,9 +110,10 @@ class EvalClient:
     @staticmethod
     def looks_unparsed(resp: Dict) -> bool:
         """
-        关键：区分「真的 0 分」和「schema 没对上」。
-        两者都返回 0.0，但前者要去改检索，后者要去改 ADAPTER —— 
-        搞混会浪费掉现场十几分钟。
+        Critical: distinguish "genuinely scored zero" from "schema did not
+        match". Both return 0.0, but the first sends you to fix retrieval and
+        the second to fix the ADAPTER. Confusing them costs you ten-plus
+        minutes on the day.
         """
         return (not EvalClient.extract_per_candidate(resp)) and not any(
             isinstance(n, dict) and any(
@@ -119,11 +125,13 @@ class EvalClient:
     @staticmethod
     def extract_per_candidate(resp: Dict) -> Dict[str, float]:
         """
-        抠出 {candidate_id: 分数}。这是 gold set 的来源，比总分重要得多——
-        没有它就只能盲调，有了它就能算分阶段召回。
+        Extract {candidate_id: score}. This is the sole source of the gold
+        set and matters far more than the aggregate. Without it you can only
+        tune blind; with it you can compute stage-by-stage recall.
         """
         out: Dict[str, float] = {}
-        # 递归找出所有「同时含 id 字段和分值字段」的 dict，不管它埋在第几层
+        # Recursively find every dict carrying both an id field and a value
+        # field, no matter how deeply it is buried
         for node in EvalClient._walk(resp):
             if not isinstance(node, dict):
                 continue
@@ -135,7 +143,7 @@ class EvalClient:
                 val = 1.0 if val else 0.0
             if isinstance(val, (int, float)):
                 out[str(cid)] = float(val)
-        # 也支持 {"grades": {"cand_1": 1, "cand_2": 0}} 这种映射形态
+        # Also supports the mapping shape {"grades": {"cand_1": 1, "cand_2": 0}}
         if not out:
             for node in EvalClient._walk(resp):
                 if isinstance(node, dict) and node and all(
@@ -166,7 +174,8 @@ class EvalClient:
             except urllib.error.HTTPError as e:
                 last = f"HTTP {e.code}: {e.read()[:300]!r}"
                 if e.code < 500:
-                    break            # 4xx 重试没意义，八成是 payload schema 不对
+                    break            # Retrying a 4xx is pointless - the payload
+                                     # schema is almost certainly wrong
             except Exception as e:   # noqa: BLE001
                 last = str(e)
             time.sleep(0.8 * (2**attempt))
@@ -174,7 +183,7 @@ class EvalClient:
 
 
 class MockEvalClient(EvalClient):
-    """离线自测用。真实 endpoint 接上后删掉。"""
+    """For offline self-testing. Delete once the real endpoint is wired up."""
 
     def __init__(self, truth: Dict[str, set]):
         super().__init__("http://mock")
@@ -192,7 +201,7 @@ class MockEvalClient(EvalClient):
 
 
 # ======================================================================
-# 实验运行器
+# Experiment runner
 # ======================================================================
 
 class ExperimentRunner:
@@ -253,7 +262,8 @@ class ExperimentRunner:
                     "warnings": trace.warnings,
                 }
             )
-            # 边跑边打印，别等全部跑完 —— 中途 Ctrl-C 也不至于什么都没有
+            # Print as we go rather than at the end, so a mid-run Ctrl-C still
+            # leaves you with something
             print(trace.render_funnel(gold=self.gold.get(jd.job_id)))
             print(f"  -> score={score:.3f}  top10={top_ids[:3]}...\n", flush=True)
 
@@ -291,7 +301,7 @@ class ExperimentRunner:
 
 
 # ======================================================================
-# Run 对比（回归检测）
+# Run comparison (regression detection)
 # ======================================================================
 
 def load_summaries() -> List[Dict]:
@@ -308,8 +318,9 @@ def load_summaries() -> List[Dict]:
 
 def compare_runs(a: Optional[str] = None, b: Optional[str] = None) -> None:
     """
-    不要只看均值。均值涨了但某几道题崩了是常态，
-    per-job delta 才能告诉你改动到底动了什么。
+    Do not look at the mean alone. A rising mean while a few jobs collapse is
+    the normal case; only the per-job delta tells you what a change actually
+    did.
     """
     summaries = load_summaries()
     if not summaries:
@@ -341,11 +352,12 @@ def compare_runs(a: Optional[str] = None, b: Optional[str] = None) -> None:
     print(f"\nmean {ra['mean_score']:.3f} -> {rb['mean_score']:.3f} "
           f"({rb['mean_score'] - ra['mean_score']:+.3f})")
     if regressions:
-        print(f"⚠ {len(regressions)} 道题回退，先去看它们的 traces.jsonl 漏斗：{regressions[:5]}")
+        print(f"! {len(regressions)} jobs regressed. Check their funnels in "
+              f"traces.jsonl first: {regressions[:5]}")
 
 
 def export_submission(out_path: str = "evaluation_results.json") -> None:
-    """把所有 run 汇总成一份可提交的文件。"""
+    """Aggregate every run into one submittable file."""
     summaries = load_summaries()
     best = max(summaries, key=lambda s: s["mean_score"]) if summaries else None
     payload = {
@@ -382,7 +394,7 @@ def export_submission(out_path: str = "evaluation_results.json") -> None:
 
 
 # ======================================================================
-# Mock 模式：离线验证整条链路
+# Mock mode: verify the whole chain offline
 # ======================================================================
 
 class MockLLM(LLMClient):
@@ -419,7 +431,8 @@ class MockLLM(LLMClient):
         for t in texts:
             rng = np.random.default_rng(abs(hash(t)) % (2**32))
             v = rng.standard_normal(64)
-            # 让含关键词的文本在向量空间里靠拢，模拟语义信号
+            # Pull keyword-bearing texts together in vector space to simulate
+            # a semantic signal
             bonus = np.zeros(64)
             for i, kw in enumerate(["python", "distributed", "search", "ranking"]):
                 if kw in t.lower():
@@ -482,7 +495,7 @@ async def _amain(args) -> None:
     cache = DiskCache("cache.sqlite3", enabled=cfg.use_cache)
     gold = GoldSet("goldset.json")
 
-    # ---- 数据 ----
+    # ---- Data ----
     if args.data_dir and os.path.isdir(args.data_dir):
         with open(os.path.join(args.data_dir, "jobs.json"), encoding="utf-8") as f:
             jobs = [JobDescription(**j) for j in json.load(f)]
@@ -506,7 +519,7 @@ async def _amain(args) -> None:
     if args.mock_llm or not st.chat_key:
         llm: LLMClient = MockLLM(cache, cfg)
         if not args.mock_llm:
-            print("! 未读到 chat_key，回退 MockLLM（--level 0 不受影响）")
+            print("! no chat_key found; falling back to MockLLM (--level 0 unaffected)")
     else:
         from llm_clients import make_client
         cfg.llm_model = st.chat_model
@@ -540,25 +553,27 @@ def main() -> None:
     p = argparse.ArgumentParser(description="Candidate search harness")
     sub = p.add_subparsers(dest="cmd")
 
-    r = sub.add_parser("run", help="跑一轮实验并提交")
+    r = sub.add_parser("run", help="run one experiment and submit it")
     r.add_argument("--level", type=int, default=3, choices=[0, 1, 2, 3])
     r.add_argument("--retrieve-k", type=int, default=30)
     r.add_argument("--batch-size", type=int, default=5)
     r.add_argument("--prompt-version", default="v1")
     r.add_argument("--run-id", default=None)
     r.add_argument("--mock", action="store_true")
-    r.add_argument("--mock-llm", action="store_true", help="即使有 key 也用 MockLLM")
-    r.add_argument("--data-dir", default=None, help="含 jobs.json/candidates.json 的目录")
-    r.add_argument("--eval-url", default=None, help="覆盖 .env 里的 EVAL_URL")
-    r.add_argument("--selftest", action="store_true", help="只打两发最小请求验通 key/模型/维度")
+    r.add_argument("--mock-llm", action="store_true", help="use MockLLM even if a key exists")
+    r.add_argument("--data-dir", default=None,
+                   help="directory holding jobs.json / candidates.json")
+    r.add_argument("--eval-url", default=None, help="override EVAL_URL from .env")
+    r.add_argument("--selftest", action="store_true",
+                   help="fire two minimal requests to validate key / model / dimension")
     r.add_argument("--no-cache", action="store_true")
     r.add_argument("--no-submit", action="store_true")
 
-    c = sub.add_parser("compare", help="对比历次 run")
+    c = sub.add_parser("compare", help="compare previous runs")
     c.add_argument("--a", default=None)
     c.add_argument("--b", default=None)
 
-    e = sub.add_parser("export", help="导出最终提交文件")
+    e = sub.add_parser("export", help="export the final submission file")
     e.add_argument("--out", default="evaluation_results.json")
 
     args = p.parse_args()

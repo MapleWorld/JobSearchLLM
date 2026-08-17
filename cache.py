@@ -1,14 +1,17 @@
 """
-cache.py — 跨进程持久化缓存。
+cache.py — cross-process persistent cache.
 
-面试现场你会跑十几轮 pipeline。没有缓存的话,每轮都要重新调
-embedding + LLM,时间和 quota 全烧在重复调用上。
+On interview day you will run the pipeline a dozen-plus times. Without a
+cache, every run re-issues the same embedding + LLM calls, burning both
+wall-clock time and quota on duplicate work.
 
-设计要点：
-- sqlite 落盘,进程重启后仍然命中（改 prompt 才失效）
-- key = sha256(namespace + payload),payload 里带上 model / prompt_version,
-  所以改了 prompt 会自动 miss,不会拿到脏结果
-- 记录 hit/miss 统计,面试时可以直接报"缓存命中率 87%"
+Design notes:
+- Backed by sqlite on disk, so it still hits after a process restart
+  (only a prompt change should invalidate it).
+- key = sha256(namespace + payload), and the payload carries model /
+  prompt_version. Changing the prompt therefore misses automatically, so
+  you can never serve a stale result from an older prompt.
+- Tracks hit/miss counts, so you can quote a concrete cache hit rate.
 """
 
 from __future__ import annotations
@@ -87,7 +90,7 @@ class DiskCache:
         payload: Any,
         producer: Callable[[], "asyncio.Future"],
     ) -> Any:
-        """异步 get-or-compute。producer 是一个无参 async callable。"""
+        """Async get-or-compute. `producer` is a zero-arg async callable."""
         cached = self.get(namespace, payload)
         if cached is not None:
             return cached

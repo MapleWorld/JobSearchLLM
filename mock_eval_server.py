@@ -1,31 +1,32 @@
 """
-mock_eval_server.py — 本地 evaluation endpoint（stdlib http.server，零依赖）。
+mock_eval_server.py — local evaluation endpoint (stdlib http.server, zero deps).
 
-为什么要起一个真的 HTTP 服务，而不是继续用 MockEvalClient：
+Why run a real HTTP service instead of keeping MockEvalClient:
 
-  原来的 MockEvalClient 直接 override 了 submit()，于是 _build_payload、
-  _submit_sync、urllib、重试退避、HTTP 错误分支 —— 整条真实链路一行都没跑过。
-  面试当天那些代码是第一次执行。
+  The original MockEvalClient overrode submit() outright, which meant
+  _build_payload, _submit_sync, urllib, retry/backoff and every HTTP error
+  branch had never executed even once. On interview day that code would be
+  running for the first time.
 
-  起一个 localhost 服务，EvalClient 走完整的 HTTP 路径，
-  ADAPTER 三函数也真正被调用。
+  With a localhost service, EvalClient takes the full HTTP path and the three
+  ADAPTER functions are genuinely exercised.
 
-── 它还能干一件更重要的事 ─────────────────────────────────
-  面试当天最大的未知数是「真实 endpoint 的响应 schema 长什么样」。
-  --schema 可以在四种常见形态之间切换，用来演练那个动作：
-  curl 一发 -> 看响应 -> 两分钟内改完 ADAPTER。
-  练过三遍，当天就不会慌。
-───────────────────────────────────────────────────────
+── It also does something more important ───────────────────────────
+  The biggest unknown on the day is what the real endpoint's response schema
+  looks like. --schema switches between four common shapes so you can
+  rehearse the actual motion: curl it, read the response, fix the ADAPTER in
+  two minutes. Do that three times and it stops being scary.
+────────────────────────────────────────────────────────────────────
 
-用法：
-    python mock_data.py                       # 先生成数据和标注
-    python mock_eval_server.py --port 8000    # 起服务
+Usage:
+    python mock_data.py                       # generate data + labels first
+    python mock_eval_server.py --port 8000    # start the server
 
-    # 换 schema 演练 ADAPTER
+    # Rehearse the ADAPTER against different shapes
     python mock_eval_server.py --schema nested
-    python mock_eval_server.py --schema minimal     # 不返回逐候选人分数！
+    python mock_eval_server.py --schema minimal     # no per-candidate scores!
 
-    # 注入故障，测重试和降级
+    # Inject failures to exercise retry and degradation
     python mock_eval_server.py --fail-rate 0.3 --latency-ms 400 --malformed-rate 0.1
 """
 
@@ -42,11 +43,11 @@ STATE: Dict = {}
 
 
 # ======================================================================
-# 四种响应 schema —— 对应真实世界里常见的几种 API 风格
+# Four response schemas, mirroring API styles you actually meet in the wild
 # ======================================================================
 
 def schema_flat(job_id: str, graded: List[tuple], score: float) -> Dict:
-    """最常见：顶层 score + results 数组。"""
+    """Most common: top-level score plus a results array."""
     return {
         "job_id": job_id,
         "score": round(score, 4),
@@ -55,7 +56,7 @@ def schema_flat(job_id: str, graded: List[tuple], score: float) -> Dict:
 
 
 def schema_nested(job_id: str, graded: List[tuple], score: float) -> Dict:
-    """企业风：层层包裹 + 布尔字段 + 字段名不一样（id / relevant）。"""
+    """Enterprise style: deeply nested, boolean fields, different key names."""
     return {
         "status": "ok",
         "data": {
@@ -71,12 +72,12 @@ def schema_nested(job_id: str, graded: List[tuple], score: float) -> Dict:
 
 
 def schema_minimal(job_id: str, graded: List[tuple], score: float) -> Dict:
-    """最坏情况：只给总分，不给逐候选人结果 -> gold set 攒不起来。"""
+    """Worst case: aggregate score only, no per-candidate results -> no gold set."""
     return {"job_id": job_id, "precision_at_10": round(score, 4)}
 
 
 def schema_verbose(job_id: str, graded: List[tuple], score: float) -> Dict:
-    """逐条 criteria 拆解 —— 信息最多，但字段藏得深。"""
+    """Per-criterion breakdown - richest data, but buried deepest."""
     return {
         "job_id": job_id,
         "overall_score": round(score, 4),
@@ -106,7 +107,7 @@ SCHEMAS = {
 # ======================================================================
 
 class Handler(BaseHTTPRequestHandler):
-    def log_message(self, fmt, *args):  # 静音默认访问日志
+    def log_message(self, fmt, *args):  # Silence the default access log
         pass
 
     def _send(self, code: int, body) -> None:
@@ -135,7 +136,7 @@ class Handler(BaseHTTPRequestHandler):
         if self.path != "/evaluate":
             return self._send(404, {"error": f"unknown path {self.path}"})
 
-        # --- 故障注入 ---
+        # --- Failure injection ---
         if rng.random() < cfg["fail_rate"]:
             cfg["injected_5xx"] += 1
             return self._send(503, {"error": "service unavailable (injected)"})
@@ -143,7 +144,8 @@ class Handler(BaseHTTPRequestHandler):
             cfg["injected_malformed"] += 1
             return self._send(200, b'{"job_id": "x", "results": [{"candidate_i')
 
-        # --- 解析请求（故意严格：schema 不对就 400，逼你把 ADAPTER 写对）---
+        # --- Parse request. Deliberately strict: a wrong shape returns 400,
+        #     which forces the ADAPTER to actually be correct. ---
         try:
             n = int(self.headers.get("Content-Length", 0))
             payload = json.loads(self.rfile.read(n).decode())
@@ -163,7 +165,7 @@ class Handler(BaseHTTPRequestHandler):
         if cfg["require_auth"] and not self.headers.get("Authorization"):
             return self._send(401, {"error": "missing Authorization header"})
 
-        # --- 评分：只查标注文件，完全不碰检索代码 ---
+        # --- Grading: reads the label file only, never touches retrieval code ---
         lab = cfg["labels"][job_id]
         cands = cands[: cfg["top_k"]]
         graded = [(c, lab.get(c, 0)) for c in cands]
@@ -181,8 +183,9 @@ def main() -> None:
     p.add_argument("--labels", default="mock_data/labels.json")
     p.add_argument("--schema", default="flat", choices=sorted(SCHEMAS))
     p.add_argument("--top-k", type=int, default=10)
-    p.add_argument("--fail-rate", type=float, default=0.0, help="返回 503 的概率")
-    p.add_argument("--malformed-rate", type=float, default=0.0, help="返回截断 JSON 的概率")
+    p.add_argument("--fail-rate", type=float, default=0.0, help="probability of a 503")
+    p.add_argument("--malformed-rate", type=float, default=0.0,
+                   help="probability of truncated JSON")
     p.add_argument("--latency-ms", type=int, default=0)
     p.add_argument("--require-auth", action="store_true")
     p.add_argument("--seed", type=int, default=0)
@@ -203,8 +206,8 @@ def main() -> None:
     print(f"mock eval endpoint  ->  http://127.0.0.1:{a.port}/evaluate")
     print(f"  schema={a.schema}  jobs={list(labels)}  top_k={a.top_k}")
     if a.fail_rate or a.malformed_rate:
-        print(f"  故障注入: 503={a.fail_rate:.0%}  malformed={a.malformed_rate:.0%}")
-    print("  GET /health 查看状态   Ctrl-C 停止")
+        print(f"  failure injection: 503={a.fail_rate:.0%}  malformed={a.malformed_rate:.0%}")
+    print("  GET /health for status   Ctrl-C to stop")
     try:
         srv.serve_forever()
     except KeyboardInterrupt:

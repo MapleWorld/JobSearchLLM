@@ -1,15 +1,18 @@
 """
-settings.py — .env 加载与配置校验（零依赖）。
+settings.py — .env loading and config validation (zero dependencies).
 
-为什么不用 python-dotenv：
-  这个项目目前的第三方依赖只有 numpy。面试环境里 `pip install` 失败是
-  真会发生的事，少一个依赖少一个风险点。下面 40 行覆盖了 .env 的全部
-  常用语法。真想用 dotenv 也行，load_dotenv() 会自动让路（见文件末尾）。
+Why not python-dotenv:
+  numpy is this project's only third-party dependency. `pip install`
+  failing in an interview environment is a real event, and every extra
+  dependency is another way to lose time. The ~40 lines below cover all
+  the common .env syntax. If you would rather use python-dotenv, the
+  import at the end of this file lets it take over.
 
-优先级（后面的覆盖前面的）：
-  .env 文件  <  真实环境变量  <  命令行参数
-即已经 export 过的环境变量不会被 .env 悄悄改掉 —— 避免"我明明改了 .env
-怎么没生效"这类现场浪费时间的问题。
+Precedence (later wins):
+  .env file  <  real environment variables  <  CLI flags
+So an already-exported variable is never silently overwritten by .env,
+which avoids the classic "I edited .env, why did nothing change?" time
+sink during a live session.
 """
 
 from __future__ import annotations
@@ -21,7 +24,7 @@ from typing import Dict, List, Optional, Tuple
 
 _LINE = re.compile(
     r"""^\s*
-        (?:export\s+)?              # 允许 `export FOO=bar`
+        (?:export\s+)?              # allow `export FOO=bar`
         ([A-Za-z_][A-Za-z0-9_]*)    # key
         \s*=\s*
         (.*?)                       # value
@@ -33,14 +36,14 @@ _LINE = re.compile(
 def _unquote(v: str) -> str:
     if len(v) >= 2 and v[0] == v[-1] and v[0] in ("'", '"'):
         inner = v[1:-1]
-        # 双引号内解转义，单引号内保持字面（和 shell 一致）
+        # Double quotes expand escapes; single quotes stay literal (shell-like)
         return inner.replace("\\n", "\n").replace("\\t", "\t") if v[0] == '"' else inner
-    # 未加引号时，# 之前的部分才是值（行内注释）
+    # When unquoted, only the text before " #" is the value (inline comment)
     return v.split(" #", 1)[0].strip()
 
 
 def load_dotenv(path: str = ".env", override: bool = False) -> Dict[str, str]:
-    """把 .env 读进 os.environ。返回本次实际写入的键值。"""
+    """Load .env into os.environ. Returns only the keys actually written."""
     loaded: Dict[str, str] = {}
     if not os.path.exists(path):
         return loaded
@@ -84,7 +87,7 @@ class Settings:
             "openai": g("OPENAI_API_KEY") or "",
         }.get(provider, "")
 
-        # embedding 可以来自另一家（Anthropic 自己不提供 embedding 模型）
+        # Embeddings may come from a different vendor (Anthropic ships no embedding model)
         embed_key = (
             g("EMBED_API_KEY")
             or {
@@ -112,12 +115,12 @@ class Settings:
             eval_key=g("EVAL_KEY") or "",
         )
 
-    # ---------- 关键：告诉你现在能跑到第几级 ----------
+    # ---------- Key: report which pipeline level is currently reachable ----------
     def max_level(self) -> int:
         if not self.chat_key:
-            return 0            # 纯 BM25，无需任何 key
+            return 0            # Pure BM25, needs no API key at all
         if not self.embed_key:
-            return 1            # 有 chat 无 embedding：编译 + 硬过滤 + BM25
+            return 1            # Chat but no embeddings: compile + hard filter + BM25
         return 3
 
     def can_submit(self) -> bool:
@@ -137,8 +140,8 @@ class Settings:
             f"  embed_key   : {mask(self.embed_key)}",
             f"  eval_url    : {self.eval_url or '—'}",
             f"  eval_key    : {mask(self.eval_key)}",
-            f"  -> 可运行到 --level {self.max_level()}"
-            + ("" if self.can_submit() else "，但 EVAL_URL 未设置，只能 --no-submit"),
+            f"  -> can run up to --level {self.max_level()}"
+            + ("" if self.can_submit() else ", but EVAL_URL is unset, so --no-submit only"),
         ]
         for w in self.warnings():
             lines.append(f"  ! {w}")
@@ -147,29 +150,31 @@ class Settings:
     def warnings(self) -> List[str]:
         w: List[str] = []
         if self.chat_key and " " in self.chat_key.strip():
-            w.append("chat_key 含空格，八成是 .env 里引号没配对")
+            w.append("chat_key contains a space - most likely unbalanced quotes in .env")
         if self.provider == "gemini" and self.embed_model.startswith("gemini-embedding-2"):
             w.append(
-                "gemini-embedding-2 对 list 输入会返回单个聚合向量，"
-                "批量 embed 会静默错位；用 gemini-embedding-001 或逐条包 Content"
+                "gemini-embedding-2 returns ONE aggregated vector for a list input, "
+                "so batch embedding silently misaligns. Use gemini-embedding-001, "
+                "or wrap each input in its own Content object."
             )
         if self.embed_dim and self.embed_dim != 3072 and self.provider == "gemini":
-            w.append(f"dim={self.embed_dim} 非预归一化，须自行 normalize（engine 已处理）")
+            w.append(f"dim={self.embed_dim} is not pre-normalized; vectors must be "
+                     f"normalized manually (engine.retrieve already does this)")
         if self.eval_url.startswith("http://"):
-            w.append("EVAL_URL 是明文 http，key 会裸奔")
+            w.append("EVAL_URL uses plaintext http - the key travels unencrypted")
         return w
 
     def require(self, level: int) -> None:
-        """在真正烧 quota 之前 fail fast。"""
+        """Fail fast before burning any quota."""
         if level > self.max_level():
             missing = "chat_key" if not self.chat_key else "embed_key"
             raise SystemExit(
-                f"--level {level} 需要 {missing}，但 .env 里没读到。\n"
-                f"当前最高可跑 --level {self.max_level()}。\n{self.report()}"
+                f"--level {level} requires {missing}, but it was not found in .env.\n"
+                f"Highest runnable level right now is --level {self.max_level()}.\n{self.report()}"
             )
 
 
-# 如果装了 python-dotenv 且想用它，把这行取消注释即可覆盖上面的实现：
+# If python-dotenv is installed and you prefer it, uncomment to override the above:
 # from dotenv import load_dotenv  # noqa: F811
 
 if __name__ == "__main__":

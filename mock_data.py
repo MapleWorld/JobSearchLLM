@@ -1,19 +1,24 @@
 """
-mock_data.py — 生成"有难度"的合成数据集 + 独立标注。
+mock_data.py — generate a genuinely hard synthetic dataset + independent labels.
 
-为什么要重做数据集：
-  原来的 make_mock_data 里，"好候选人"关键词密度高、坏候选人完全不沾边，
-  BM25 一把就能抓完，所有 run 都是 1.000 —— 这种数据集测不出任何东西。
+Why the dataset was rebuilt:
+  In the original make_mock_data, "good" candidates were keyword-dense and
+  "bad" ones shared no vocabulary at all, so BM25 alone swept every one of
+  them up and every run scored 1.000. A dataset like that measures nothing.
 
-这里刻意埋了四类候选人，对应四种真实失败模式：
+Four candidate classes are planted here, each targeting a real failure mode:
 
-  QUALIFIED   真合格，关键词也明显            -> 基线，都该找到
-  DISTRACTOR  关键词齐全但硬条件不达标         -> 测 precision：光靠语义会被骗
-  HIDDEN_GEM  真合格但用同义表述，不含原词      -> 测 recall：精确匹配会漏
-  IRRELEVANT  无关                            -> 噪声
+  QUALIFIED   Genuinely qualified, obvious keywords -> baseline; must be found
+  DISTRACTOR  All the keywords, fails a hard bar    -> tests precision: pure
+                                                       semantics gets fooled
+  HIDDEN_GEM  Qualified but phrased in synonyms     -> tests recall: exact
+                                                       matching misses these
+  IRRELEVANT  Unrelated                             -> noise
 
-标注（labels.json）由本文件独立生成，检索代码看不到，
-mock server 只读标注文件 —— 这样 eval 才是外部裁判，不是自己给自己打分。
+The labels (labels.json) are produced here, independently. The retrieval code
+never sees them, and the mock server reads nothing but the label file - which
+is what makes the evaluation an external judge rather than the system grading
+its own homework.
 """
 
 from __future__ import annotations
@@ -49,7 +54,8 @@ JOBS = [
     },
 ]
 
-# HIDDEN_GEM 用这些说法，绝不出现 "Python" / "distributed systems" 原词
+# HIDDEN_GEM candidates use these phrasings and never the literal
+# "Python" / "distributed systems" tokens
 SYNONYM_PHRASES = [
     "large-scale service mesh and sharded storage layers",
     "horizontally scaled multi-region infrastructure",
@@ -67,7 +73,8 @@ def generate(n: int = 400, seed: int = 7, scarce: bool = False) -> Tuple[List[Di
         cid = f"cand_{i:04d}"
         r = i % 10
         if scarce:
-            # 稀缺模式：合格者只有 ~6%，top-10 装不满 -> precision@10 才有区分度
+            # Scarce mode: only ~6% qualify, so top-10 cannot be filled with
+            # easy positives - which is what gives precision@10 any resolution
             r = {0: 0, 1: 4}.get(i % 33, 2 if i % 3 == 0 else 9)
 
         if r in (0, 1):  # QUALIFIED
@@ -78,12 +85,15 @@ def generate(n: int = 400, seed: int = 7, scarce: bool = False) -> Tuple[List[Di
                     "and production machine learning services in Python at scale.")
             qualified = True
 
-        elif r in (2, 3):  # DISTRACTOR 20% —— 关键词全有，但年限不够
+        elif r in (2, 3):  # DISTRACTOR - every keyword present
             kind = "DISTRACTOR"
-            # 关键：年限也达标、技能关键词也齐全 —— 结构化字段无法区分。
-            # 只有读懂"他是在写文档/做QA，不是在建系统"才能判掉。
-            # 若 distractor 能被 years>=5 一刀切掉，那 mock 就退化成了 oracle，
-            # 任何配置都拿满分，测不出东西。
+            # Critical: years of experience ALSO clears the bar and the skill
+            # keywords are ALSO all present, so no structured field separates
+            # these from real hires. Only reading the text - "this person
+            # documents and QAs the system, they do not build it" - rejects them.
+            # If a distractor could be removed by a years>=5 predicate, the mock
+            # degenerates into an oracle: every config scores a perfect 1.000
+            # and the harness measures nothing.
             yrs = rng.randint(5, 14)
             skills = ["Python", "Distributed Systems", "Kubernetes", "Spark"]
             text = ("Technical writer documenting distributed search ranking pipelines "
@@ -91,7 +101,7 @@ def generate(n: int = 400, seed: int = 7, scarce: bool = False) -> Tuple[List[Di
                     "and QA test plans for the platform team at scale.")
             qualified = False
 
-        elif r == 4:  # HIDDEN_GEM 10% —— 真合格但不含原词
+        elif r == 4:  # HIDDEN_GEM - qualified, but never uses the literal keywords
             kind = "HIDDEN_GEM"
             yrs = rng.randint(6, 16)
             skills = rng.choice(SYNONYM_SKILLS)
@@ -114,7 +124,7 @@ def generate(n: int = 400, seed: int = 7, scarce: bool = False) -> Tuple[List[Di
         candidates.append({
             "candidate_id": cid,
             "name": f"Candidate {i}",
-            "kind": kind,                      # 只用于事后分析，检索侧不读
+            "kind": kind,                      # Post-hoc analysis only; retrieval never reads it
             "years_experience": yrs,
             "skills": skills,
             "location": rng.choice(["Remote", "Seattle, WA", "New York, NY"]),
@@ -133,7 +143,7 @@ def dump(out_dir: str = OUT_DIR, n: int = 400, seed: int = 7, scarce: bool = Fal
 
     with open(os.path.join(out_dir, "jobs.json"), "w", encoding="utf-8") as f:
         json.dump(jobs, f, ensure_ascii=False, indent=2)
-    # 候选人文件里剥掉 kind 和 labels —— 检索侧不该看见答案
+    # Strip kind and labels from the candidate file - retrieval must not see answers
     with open(os.path.join(out_dir, "candidates.json"), "w", encoding="utf-8") as f:
         json.dump([{k: v for k, v in c.items() if k != "kind"} for c in cands],
                   f, ensure_ascii=False, indent=2)
@@ -146,9 +156,9 @@ def dump(out_dir: str = OUT_DIR, n: int = 400, seed: int = 7, scarce: bool = Fal
     dist = Counter(c["kind"] for c in cands)
     pos = sum(labels[JOBS[0]["job_id"]].values())
     print(f"wrote {out_dir}/  jobs={len(jobs)} candidates={len(cands)}")
-    print(f"  分布: {dict(dist)}")
-    print(f"  每题合格者 {pos} 人 -> top-10 理论满分可达 1.000，但需同时避开 "
-          f"{dist['DISTRACTOR']} 个 distractor")
+    print(f"  distribution: {dict(dist)}")
+    print(f"  {pos} qualified per job -> a perfect 1.000 is reachable, but only "
+          f"by avoiding all {dist['DISTRACTOR']} distractors")
 
 
 if __name__ == "__main__":
@@ -156,6 +166,7 @@ if __name__ == "__main__":
     p.add_argument("--n", type=int, default=400)
     p.add_argument("--seed", type=int, default=7)
     p.add_argument("--out", default=OUT_DIR)
-    p.add_argument("--scarce", action="store_true", help="合格者稀缺，precision@10 才有区分度")
+    p.add_argument("--scarce", action="store_true",
+                   help="make positives scarce so precision@10 has resolution")
     a = p.parse_args()
     dump(a.out, a.n, a.seed, a.scarce)
