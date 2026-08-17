@@ -1,14 +1,14 @@
 """
 harness.py — Evaluation 闭环。
 
-题目要求"根据测试结果不断迭代，最终提交所有 Evaluation Results"。
+题目要求"根据测试结果不断迭代,最终提交所有 Evaluation Results"。
 这个文件负责的就是那个闭环：
 
     跑 pipeline -> 提交 eval endpoint -> 解析分数 -> 落盘 -> 吸收进 gold set
         -> 打印漏斗诊断 -> 改配置 -> 再跑 -> 对比两次 run 的每题 delta
 
 每次 run 都会在 runs/<run_id>/ 下留一份完整快照（config + results + traces +
-summary），最后一步 `python harness.py export` 直接产出可提交的汇总文件。
+summary）,最后一步 `python harness.py export` 直接产出可提交的汇总文件。
 
 ⚠️ 开场 5 分钟必须做的一件事：
    把 EvalClient.ADAPTER 里的三个函数改成和真实 endpoint 的 schema 对齐。
@@ -53,7 +53,7 @@ RUNS_DIR = "runs"
 class EvalClient:
     """
     ADAPTER 区是唯一需要按真实 endpoint 改的地方。
-    先用 curl 打一发，把响应贴进来，再对着改这三个函数。
+    先用 curl 打一发,把响应贴进来,再对着改这三个函数。
     """
 
     def __init__(self, base_url: str, api_key: str = "", timeout: float = 30.0):
@@ -71,7 +71,7 @@ class EvalClient:
         for key in ("score", "overall_score", "precision", "accuracy", "grade"):
             if isinstance(resp.get(key), (int, float)):
                 return float(resp[key])
-        # 常见形态：返回每个候选人的 pass/fail，总分 = 通过率
+        # 常见形态：返回每个候选人的 pass/fail,总分 = 通过率
         grades = EvalClient.extract_per_candidate(resp)
         if grades:
             return sum(1 for v in grades.values() if v >= 0.5) / len(grades)
@@ -80,8 +80,8 @@ class EvalClient:
     @staticmethod
     def extract_per_candidate(resp: Dict) -> Dict[str, float]:
         """
-        抠出 {candidate_id: 分数}。这是 gold set 的来源，比总分重要得多——
-        没有它就只能盲调，有了它就能算分阶段召回。
+        抠出 {candidate_id: 分数}。这是 gold set 的来源,比总分重要得多——
+        没有它就只能盲调,有了它就能算分阶段召回。
         """
         out: Dict[str, float] = {}
         for key in ("results", "candidates", "graded", "details", "evaluations"):
@@ -128,7 +128,7 @@ class EvalClient:
             except urllib.error.HTTPError as e:
                 last = f"HTTP {e.code}: {e.read()[:300]!r}"
                 if e.code < 500:
-                    break            # 4xx 重试没意义，八成是 payload schema 不对
+                    break            # 4xx 重试没意义,八成是 payload schema 不对
             except Exception as e:   # noqa: BLE001
                 last = str(e)
             time.sleep(0.8 * (2**attempt))
@@ -215,7 +215,7 @@ class ExperimentRunner:
                     "warnings": trace.warnings,
                 }
             )
-            # 边跑边打印，别等全部跑完 —— 中途 Ctrl-C 也不至于什么都没有
+            # 边跑边打印,别等全部跑完 —— 中途 Ctrl-C 也不至于什么都没有
             print(trace.render_funnel(gold=self.gold.get(jd.job_id)))
             print(f"  -> score={score:.3f}  top10={top_ids[:3]}...\n", flush=True)
 
@@ -270,7 +270,7 @@ def load_summaries() -> List[Dict]:
 
 def compare_runs(a: Optional[str] = None, b: Optional[str] = None) -> None:
     """
-    不要只看均值。均值涨了但某几道题崩了是常态，
+    不要只看均值。均值涨了但某几道题崩了是常态,
     per-job delta 才能告诉你改动到底动了什么。
     """
     summaries = load_summaries()
@@ -303,7 +303,7 @@ def compare_runs(a: Optional[str] = None, b: Optional[str] = None) -> None:
     print(f"\nmean {ra['mean_score']:.3f} -> {rb['mean_score']:.3f} "
           f"({rb['mean_score'] - ra['mean_score']:+.3f})")
     if regressions:
-        print(f"⚠ {len(regressions)} 道题回退，先去看它们的 traces.jsonl 漏斗：{regressions[:5]}")
+        print(f"⚠ {len(regressions)} 道题回退,先去看它们的 traces.jsonl 漏斗：{regressions[:5]}")
 
 
 def export_submission(out_path: str = "evaluation_results.json") -> None:
@@ -381,7 +381,7 @@ class MockLLM(LLMClient):
         for t in texts:
             rng = np.random.default_rng(abs(hash(t)) % (2**32))
             v = rng.standard_normal(64)
-            # 让含关键词的文本在向量空间里靠拢，模拟语义信号
+            # 让含关键词的文本在向量空间里靠拢,模拟语义信号
             bonus = np.zeros(64)
             for i, kw in enumerate(["python", "distributed", "search", "ranking"]):
                 if kw in t.lower():
@@ -450,7 +450,7 @@ async def _amain(args) -> None:
         ev: EvalClient = MockEvalClient(truth)
     else:
         raise SystemExit(
-            "接真实数据：在这里加载 jobs / candidates，并把 llm 换成真实 SDK 子类，"
+            "接真实数据：在这里加载 jobs / candidates,并把 llm 换成真实 SDK 子类,"
             "ev = EvalClient(os.environ['EVAL_URL'], os.environ.get('EVAL_KEY',''))"
         )
 

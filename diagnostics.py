@@ -3,13 +3,13 @@ diagnostics.py — 分阶段召回诊断。
 
 这是整个项目里最值钱的 100 行代码。
 
-核心命题：**如果正确候选人在 retrieval 阶段就被丢了，reranker 再强也救不回来。**
+核心命题：**如果正确候选人在 retrieval 阶段就被丢了,reranker 再强也救不回来。**
 所以每次搜索都要记录漏斗（funnel）：
     pool → after_hard_filter → after_lexical → after_dense → after_fusion → final_top10
 以及每一层"丢了谁"。
 
-有了 gold set（见下）之后，就能算出每一层的 recall，一眼看出瓶颈在哪一层。
-面试官问"你是怎么发现问题的"，答案就是这张表。
+有了 gold set（见下）之后,就能算出每一层的 recall,一眼看出瓶颈在哪一层。
+面试官问"你是怎么发现问题的",答案就是这张表。
 """
 
 from __future__ import annotations
@@ -30,7 +30,7 @@ class StageRecord:
     count_in: int
     count_out: int
     ids_out: List[str]           # 出口存活的 candidate id（用于算 recall）
-    dropped_sample: List[str]    # 被丢掉的样本（最多 10 个，用于人工 eyeball）
+    dropped_sample: List[str]    # 被丢掉的样本（最多 10 个,用于人工 eyeball）
     elapsed_ms: float
     note: str = ""
 
@@ -82,7 +82,7 @@ class SearchTrace:
         d = asdict(self)
         d.pop("_t0", None)
         for s in d["stages"]:
-            # ids_out 可能很长，落盘时截断非 final 阶段
+            # ids_out 可能很长,落盘时截断非 final 阶段
             if len(s["ids_out"]) > 200:
                 s["ids_out"] = s["ids_out"][:200]
         return d
@@ -133,12 +133,12 @@ class SearchTrace:
 
 class GoldSet:
     """
-    这类题通常拿不到显式标注，但 evaluation endpoint 会告诉你
+    这类题通常拿不到显式标注,但 evaluation endpoint 会告诉你
     "你提交的 10 个人里哪几个是对的"。把历次跑分中被判为『对』的
-    candidate_id 累积起来，就得到一个逐轮变厚的伪 ground truth。
+    candidate_id 累积起来,就得到一个逐轮变厚的伪 ground truth。
 
     有了它就能回答那个关键问题：
-      「这一轮分数掉了，是 retrieval 漏召回，还是 rerank 排错了？」
+      「这一轮分数掉了,是 retrieval 漏召回,还是 rerank 排错了？」
 
     用法：
         gold = GoldSet("goldset.json")
@@ -164,7 +164,7 @@ class GoldSet:
             json.dump(self._data, f, ensure_ascii=False, indent=2)
 
     def absorb(self, job_id: str, grades: Dict[str, float]) -> None:
-        """grades: {candidate_id: score}。取历史最大值，避免被单次波动抹掉。"""
+        """grades: {candidate_id: score}。取历史最大值,避免被单次波动抹掉。"""
         bucket = self._data.setdefault(job_id, {})
         for cid, sc in grades.items():
             bucket[cid] = max(bucket.get(cid, float("-inf")), float(sc))
@@ -174,7 +174,7 @@ class GoldSet:
         return {c for c, s in self._data.get(job_id, {}).items() if s >= self.threshold}
 
     def negatives(self, job_id: str) -> Set[str]:
-        """已知的错误答案 —— 可以拿来做 few-shot 负例，或验证 filter 是否有效。"""
+        """已知的错误答案 —— 可以拿来做 few-shot 负例,或验证 filter 是否有效。"""
         return {c for c, s in self._data.get(job_id, {}).items() if s < self.threshold}
 
     def coverage(self) -> Dict[str, int]:
@@ -187,9 +187,9 @@ class GoldSet:
 
 def oracle_ceiling_note(trace: SearchTrace, gold: Set[str]) -> str:
     """
-    gold 还没攒起来的时候（前两轮），用这个粗判：
-    把 filter 全关、top_k 拉到 200 跑一次，如果分数明显变高，
-    说明瓶颈在 filter 太严（precision-recall 折中点选错了），而不是 rerank。
+    gold 还没攒起来的时候（前两轮）,用这个粗判：
+    把 filter 全关、top_k 拉到 200 跑一次,如果分数明显变高,
+    说明瓶颈在 filter 太严（precision-recall 折中点选错了）,而不是 rerank。
     """
     if not trace.stages:
         return "no stages recorded"
@@ -197,7 +197,7 @@ def oracle_ceiling_note(trace: SearchTrace, gold: Set[str]) -> str:
     if not gold:
         return (
             f"pool={first.count_in} -> final={last.count_out}; "
-            "gold set 为空，建议先跑一次 --level 0 baseline 攒 gold"
+            "gold set 为空,建议先跑一次 --level 0 baseline 攒 gold"
         )
     reached = len(gold & set(last.ids_out))
     return f"ceiling: gold={len(gold)}, 进入 final 的 gold={reached}"

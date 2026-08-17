@@ -1,14 +1,14 @@
 """
 cache.py — 跨进程持久化缓存。
 
-面试现场你会跑十几轮 pipeline。没有缓存的话，每轮都要重新调
-embedding + LLM，时间和 quota 全烧在重复调用上。
+面试现场你会跑十几轮 pipeline。没有缓存的话,每轮都要重新调
+embedding + LLM,时间和 quota 全烧在重复调用上。
 
 设计要点：
-- sqlite 落盘，进程重启后仍然命中（改 prompt 才失效）
-- key = sha256(namespace + payload)，payload 里带上 model / prompt_version，
-  所以改了 prompt 会自动 miss，不会拿到脏结果
-- 记录 hit/miss 统计，面试时可以直接报"缓存命中率 87%"
+- sqlite 落盘,进程重启后仍然命中（改 prompt 才失效）
+- key = sha256(namespace + payload),payload 里带上 model / prompt_version,
+  所以改了 prompt 会自动 miss,不会拿到脏结果
+- 记录 hit/miss 统计,面试时可以直接报"缓存命中率 87%"
 """
 
 from __future__ import annotations
